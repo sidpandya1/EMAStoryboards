@@ -11,7 +11,12 @@ struct Survery{
     static let activeQuestion: Question = allQuestions[0]
 }
 
-
+protocol QuestionInterface{
+    func getID() -> Int
+    func getText() -> String
+    func setResponse(mResponse: String)
+    func getResponse() -> String
+}
 struct Question: Codable {
     let id: Int
     let type: String
