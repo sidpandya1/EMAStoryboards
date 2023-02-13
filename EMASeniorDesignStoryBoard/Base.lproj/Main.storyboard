@@ -16,29 +16,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfS-cm-xjf">
-                                <rect key="frame" x="140" y="666" width="113" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfS-cm-xjf">
+                                <rect key="frame" x="35" y="666" width="322" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Login"/>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="GLe-HU-Mxg">
-                                <rect key="frame" x="68" y="374" width="256" height="104"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d0x-6v-fwJ">
+                                <rect key="frame" x="35" y="88" width="322" height="186"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z5b-uF-1n3">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EMALogo 1-2" translatesAutoresizingMaskIntoConstraints="NO" id="Jtk-XD-gGw">
+                                        <rect key="frame" x="0.0" y="0.0" width="322" height="186"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PeQ-86-hdo">
+                                <rect key="frame" x="63" y="730" width="266.66666666666669" height="87.666666666666629"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="penn_state_behrend_logo_3-4in (1)-1 1" translatesAutoresizingMaskIntoConstraints="NO" id="csH-IH-fRV">
+                                        <rect key="frame" x="0.0" y="0.0" width="266.66666666666669" height="87.666666666666671"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="WLX-V7-uzs">
+                                <rect key="frame" x="68" y="375" width="256" height="103"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vnt-U4-uoP">
                                         <rect key="frame" x="0.0" y="0.0" width="256" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="CuV-DI-UpS"/>
-                                            <constraint firstAttribute="width" constant="256" id="gVC-Ym-HUg"/>
+                                            <constraint firstAttribute="width" constant="256" id="XYc-gv-PDo"/>
+                                            <constraint firstAttribute="height" constant="40" id="q6N-nx-xpd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qg5-5w-JNO">
-                                        <rect key="frame" x="0.0" y="64" width="256" height="40"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Pt-e3-eAw">
+                                        <rect key="frame" x="0.0" y="63" width="256" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Fxh-bT-5wn"/>
-                                            <constraint firstAttribute="width" constant="256" id="hPH-5m-9Io"/>
+                                            <constraint firstAttribute="width" constant="256" id="0IA-2V-L4D"/>
+                                            <constraint firstAttribute="height" constant="40" id="dmo-nX-xan"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -48,6 +63,26 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PeQ-86-hdo" secondAttribute="bottom" constant="0.33000000000000002" id="0sc-dq-6e3"/>
+                            <constraint firstItem="BfS-cm-xjf" firstAttribute="top" secondItem="WLX-V7-uzs" secondAttribute="bottom" constant="188" id="5RM-PB-Am5"/>
+                            <constraint firstItem="WLX-V7-uzs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68" id="9Fe-a1-dZd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d0x-6v-fwJ" secondAttribute="trailing" constant="36" id="LtB-jd-gWL"/>
+                            <constraint firstItem="PeQ-86-hdo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="63" id="MIL-iU-UC4"/>
+                            <constraint firstItem="WLX-V7-uzs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68" id="P1v-sB-OvP"/>
+                            <constraint firstItem="WLX-V7-uzs" firstAttribute="top" secondItem="d0x-6v-fwJ" secondAttribute="bottom" constant="101" id="SKP-2F-Z8N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BfS-cm-xjf" secondAttribute="trailing" constant="36" id="VxM-wF-HWr"/>
+                            <constraint firstItem="PeQ-86-hdo" firstAttribute="top" secondItem="BfS-cm-xjf" secondAttribute="bottom" constant="29.670000000000002" id="WYt-hR-oAH"/>
+                            <constraint firstItem="d0x-6v-fwJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="fqF-Db-4Fq"/>
+                            <constraint firstItem="BfS-cm-xjf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="fyc-ig-jDt"/>
+                            <constraint firstItem="PeQ-86-hdo" firstAttribute="top" secondItem="BfS-cm-xjf" secondAttribute="bottom" constant="29.670000000000002" id="mXN-ga-Bdz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WLX-V7-uzs" secondAttribute="trailing" constant="69" id="n1X-mh-URc"/>
+                            <constraint firstItem="WLX-V7-uzs" firstAttribute="top" secondItem="d0x-6v-fwJ" secondAttribute="bottom" constant="101" id="oOq-Eb-7ld"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WLX-V7-uzs" secondAttribute="trailing" constant="69" id="vPg-S8-15w"/>
+                            <constraint firstItem="d0x-6v-fwJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="wNt-Sn-cBD"/>
+                            <constraint firstItem="BfS-cm-xjf" firstAttribute="top" secondItem="WLX-V7-uzs" secondAttribute="bottom" constant="188" id="wvj-ce-geM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PeQ-86-hdo" secondAttribute="trailing" constant="63.329999999999998" id="yg0-q3-2jJ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -56,6 +91,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="EMALogo 1-2" width="322" height="186"/>
+        <image name="penn_state_behrend_logo_3-4in (1)-1 1" width="266.66665649414062" height="87.666664123535156"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
