@@ -17,8 +17,12 @@
 		35029EE32998E9430053602B /* EMASeniorDesignStoryBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35029EE22998E9430053602B /* EMASeniorDesignStoryBoardTests.swift */; };
 		35029EED2998E9430053602B /* EMASeniorDesignStoryBoardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35029EEC2998E9430053602B /* EMASeniorDesignStoryBoardUITests.swift */; };
 		35029EEF2998E9430053602B /* EMASeniorDesignStoryBoardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35029EEE2998E9430053602B /* EMASeniorDesignStoryBoardUITestsLaunchTests.swift */; };
-		5654599B299AE0FF0090B52D /* Functions in Resources */ = {isa = PBXBuildFile; fileRef = 56545999299AE0FF0090B52D /* Functions */; };
-		5654599C299AE0FF0090B52D /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 5654599A299AE0FF0090B52D /* Model */; };
+		565459A1299AE2490090B52D /* SurveryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459A0299AE2490090B52D /* SurveryManager.swift */; };
+		565459A3299AE2A70090B52D /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459A2299AE2A70090B52D /* LocalNotifications.swift */; };
+		565459A6299AE3140090B52D /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459A5299AE3140090B52D /* DataStructures.swift */; };
+		565459A9299AE36F0090B52D /* loginFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459A8299AE36F0090B52D /* loginFunctions.swift */; };
+		565459AB299AE3950090B52D /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459AA299AE3950090B52D /* JSONManager.swift */; };
+		565459AD299AE3C90090B52D /* ServerConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459AC299AE3C90090B52D /* ServerConnect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +57,12 @@
 		35029EE82998E9430053602B /* EMASeniorDesignStoryBoardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EMASeniorDesignStoryBoardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35029EEC2998E9430053602B /* EMASeniorDesignStoryBoardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMASeniorDesignStoryBoardUITests.swift; sourceTree = "<group>"; };
 		35029EEE2998E9430053602B /* EMASeniorDesignStoryBoardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMASeniorDesignStoryBoardUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		56545999299AE0FF0090B52D /* Functions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Functions; path = ../../../../Functions; sourceTree = "<group>"; };
-		5654599A299AE0FF0090B52D /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Model; path = ../../../../Model; sourceTree = "<group>"; };
+		565459A0299AE2490090B52D /* SurveryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveryManager.swift; sourceTree = "<group>"; };
+		565459A2299AE2A70090B52D /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
+		565459A5299AE3140090B52D /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		565459A8299AE36F0090B52D /* loginFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginFunctions.swift; sourceTree = "<group>"; };
+		565459AA299AE3950090B52D /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
+		565459AC299AE3C90090B52D /* ServerConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +113,8 @@
 		35029EC72998E9410053602B /* EMASeniorDesignStoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				5651D272299AE00B0012B985 /* New Group */,
+				565459A4299AE2E00090B52D /* quesitons */,
+				5654599F299AE1ED0090B52D /* functions */,
 				35029EC82998E9410053602B /* AppDelegate.swift */,
 				35029ECA2998E9410053602B /* SceneDelegate.swift */,
 				35029ECC2998E9410053602B /* ViewController.swift */,
@@ -135,13 +144,24 @@
 			path = EMASeniorDesignStoryBoardUITests;
 			sourceTree = "<group>";
 		};
-		5651D272299AE00B0012B985 /* New Group */ = {
+		5654599F299AE1ED0090B52D /* functions */ = {
 			isa = PBXGroup;
 			children = (
-				56545999299AE0FF0090B52D /* Functions */,
-				5654599A299AE0FF0090B52D /* Model */,
+				565459A0299AE2490090B52D /* SurveryManager.swift */,
+				565459A2299AE2A70090B52D /* LocalNotifications.swift */,
+				565459A5299AE3140090B52D /* DataStructures.swift */,
+				565459A8299AE36F0090B52D /* loginFunctions.swift */,
+				565459AA299AE3950090B52D /* JSONManager.swift */,
+				565459AC299AE3C90090B52D /* ServerConnect.swift */,
 			);
-			path = "New Group";
+			path = functions;
+			sourceTree = "<group>";
+		};
+		565459A4299AE2E00090B52D /* quesitons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = quesitons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,10 +268,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5654599C299AE0FF0090B52D /* Model in Resources */,
 				35029ED82998E9430053602B /* LaunchScreen.storyboard in Resources */,
 				35029ED52998E9430053602B /* Assets.xcassets in Resources */,
-				5654599B299AE0FF0090B52D /* Functions in Resources */,
 				35029ED02998E9410053602B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,10 +295,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				565459A6299AE3140090B52D /* DataStructures.swift in Sources */,
+				565459A9299AE36F0090B52D /* loginFunctions.swift in Sources */,
+				565459A3299AE2A70090B52D /* LocalNotifications.swift in Sources */,
+				565459AD299AE3C90090B52D /* ServerConnect.swift in Sources */,
 				35029ED32998E9410053602B /* EMASeniorDesignStoryBoard.xcdatamodeld in Sources */,
 				35029ECD2998E9410053602B /* ViewController.swift in Sources */,
 				35029EC92998E9410053602B /* AppDelegate.swift in Sources */,
 				35029ECB2998E9410053602B /* SceneDelegate.swift in Sources */,
+				565459AB299AE3950090B52D /* JSONManager.swift in Sources */,
+				565459A1299AE2490090B52D /* SurveryManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
