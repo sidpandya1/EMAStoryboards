@@ -52,6 +52,5 @@ class SurveyManager{
         print("decrement: ", counter)
     }
     
-    ]
  
 }

@@ -6,9 +6,10 @@
 //
 
 import Foundation
-class RangedQuestion: QuestionInterface{
-    func setLowerBound(mLowerBound: Int)
-    func setUpperBound(mUpperBound: Int)
-    func getLowerBound() -> Int
-    func getUpperBound() -> Int
-}
+//class RangedQuestion: QuestionInterface{
+//    func setLowerBound(mLowerBound: Int) {}
+//
+//    func setUpperBound(mUpperBound: Int) {}
+//    func getLowerBound() -> Int {}
+//    func getUpperBound() -> Int {}
+//}

@@ -49,17 +49,17 @@ class NotificationManager {
         UNUserNotificationCenter.current().add(request)
     }
 }
-
-struct LocalNotifications: View {
-    var body: some View {
-        VStack(spacing: 40) {
-            Button("Request Permission") {
-                NotificationManager.instance.requestAuthorization()
-            }
-        }
-        
-        .onAppear {
-            
-        }
-    }
-}
+//
+//struct LocalNotifications: View {
+//    var body: some View {
+//        VStack(spacing: 40) {
+//            Button("Request Permission") {
+//                NotificationManager.instance.requestAuthorization()
+//            }
+//        }
+//
+//        .onAppear {
+//
+//        }
+//    }
+//}
