@@ -8,9 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var serverconnection = ServerConnect();
     override func viewDidLoad() {
         super.viewDidLoad()
+        serverconnection.connect();
+        
         // Do any additional setup after loading the view.
     }
     @IBAction func loginButton() {

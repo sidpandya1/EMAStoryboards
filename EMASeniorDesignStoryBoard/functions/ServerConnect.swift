@@ -25,11 +25,18 @@ class ServerConnect{
         
     }
     func connect(){
-        let url = URL(string:"https://psubehrendema.org/")
+        let url = URL(string:"https://psubehrendema.org/getSurvey.php")
         URLSession.shared.dataTask(with: url!, completionHandler: {(data ,respones ,error) in guard let data = data, error == nil else{print(error!);return}
         //preform extratction
-           
-            
+//           let decoder = JSONDecoder()
+//        let questions = try! decoder.decode([Question].self, from: data)
+//            
+//
+//            for question in questions{
+//                print(question.text)
+//
+//
+//            }
             
             
         }).resume()
