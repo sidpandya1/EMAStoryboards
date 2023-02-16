@@ -13,11 +13,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    @IBAction func loginButton() {
-        let vc = storyboard?.instantiateViewController(identifier: "QuestionView") as! QuestionControllerViewController
-        present(vc, animated: true)
-    }
-    
+   
 
 }
 
