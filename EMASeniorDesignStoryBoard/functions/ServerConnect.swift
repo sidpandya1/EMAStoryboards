@@ -20,31 +20,49 @@ class ServerConnect{
         else{
             return false
         }
-       
+        
         
         
     }
     func connect(){
-        let url = URL(string:"https://psubehrendema.org/getSurvey.php")
-        URLSession.shared.dataTask(with: url!, completionHandler: {(data ,respones ,error) in guard let data = data, error == nil else{print(error!);return}
-        //preform extratction
-//           let decoder = JSONDecoder()
-//        let questions = try! decoder.decode([Question].self, from: data)
-//            
-//
-//            for question in questions{
-//                print(question.text)
-//
-//
-//            }
+        guard let url = URL(string:"https://psubehrendema.org/getSurvey.php") else{
+            return
             
-            
-        }).resume()
-                                   
+        }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                if let Question = try? JSONDecoder().decode([Question].self, from: data) {
+                    print(Question)
+                } else {
+                    print("Invalid Response")
+                    print(data)
+                    print(response)
+                    
+                }
+            } else if let error = error {
+                print("HTTP Request Failed \(error)")
+            }
+        }
+            .resume()
+        
+        
+        //           let decoder = JSONDecoder()
+        //        let questions = try! decoder.decode([Question].self, from: data)
+        //
+        //
+        //            for question in questions{
+        //                print(question.text)
+        //
+        //
+        //            }
+        
+        
+        
+        
     }
     
     
-    
-    
-    
 }
+    
+    
+
