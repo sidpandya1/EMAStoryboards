@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class SurveyManager{
     private var question: [Question] = Survery.allQuestions
@@ -52,5 +53,29 @@ class SurveyManager{
         print("decrement: ", counter)
     }
     
+    func returnView() -> UIViewController {
+            switch question[counter].type{
+            case "Scaled":
+                return (ScaledView())
+            default:
+                return (HomeView())
+            }
+        }
+    
+    func nextQuestion() -> UIViewController {
+            if (counter < question.endIndex-1){
+                incementCounter()
+                print(question[counter].text)
+            }
+            
+            return returnView()
+        }
+        
+        func previousQuestion() -> UIViewController {
+            if (counter > question.startIndex){
+                decrementCounter()
+            }
+            return returnView()
+        }
  
 }
