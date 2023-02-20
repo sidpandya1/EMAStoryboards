@@ -25,7 +25,7 @@ class ServerConnect{
         
     }
     func connect(){
-        guard let url = URL(string:"https://psubehrendema.org/getSurvey.php") else{
+        guard let url = URL(string:"https://psubehrendema.org/getSurvey_2.php") else{
             return
             
         }
