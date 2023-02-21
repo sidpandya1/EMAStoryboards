@@ -22,13 +22,12 @@ class FirstScreen: UIViewController {
         userIDField.placeholder = "User ID"
         userIDField.borderStyle = UITextField.BorderStyle.line
         userIDField.backgroundColor = UIColor.white
-		userIDField.textColor = .systemBlue
         self.view.addSubview(userIDField)
         
         passwordField.placeholder = "Password"
+		passwordField.isSecureTextEntry = true
         passwordField.borderStyle = UITextField.BorderStyle.line
         passwordField.backgroundColor = UIColor.white
-		passwordField.textColor = .systemBlue
 		self.view.addSubview(passwordField)
         
         setupButton()

@@ -21,12 +21,12 @@ class JSONEncoding{
 	func addAnswerToArray(id: Int, answer: String){
 		let currentAnswer = Answer(id: id, answer: answer)
 		arrayOfAnswers.append(currentAnswer)
-		print("added question to array")
+		print("added answer to array")
 	}
 	
 	func deleteLastAnswerFromArray(){
 		arrayOfAnswers.removeLast()
-		print("removed last answer ")
+		print("removed last answer")
 	}
 	
 	func arraySize() -> Int{
