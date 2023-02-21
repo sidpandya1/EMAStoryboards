@@ -13,6 +13,10 @@ class SurveyManager{
     public static let Survey = SurveyManager()
     private var counter: Int = 0
     
+	func getQuestionID() -> Int{
+		let q = question[counter].id
+		return q
+	}
     func getCurrentQuestion() -> String{
         let q = question[counter].text
         return q
@@ -45,12 +49,10 @@ class SurveyManager{
     
     func incementCounter(){
         counter+=1
-        print("increment: ", counter)
     }
     
     func decrementCounter(){
         counter-=1
-        print("decrement: ", counter)
     }
     
     func returnView() -> UIViewController {
@@ -63,9 +65,13 @@ class SurveyManager{
         }
     
     func nextQuestion() -> UIViewController {
-            if (counter < question.endIndex-1){
+		if (counter == question.endIndex-1){
+			print(JSONEncoding.encoderJSON.encodeArray())
+			return HomeView()
+		}
+		if (counter < question.endIndex){
                 incementCounter()
-                print(question[counter].text)
+
             }
             
             return returnView()
