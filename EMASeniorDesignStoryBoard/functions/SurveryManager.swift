@@ -71,7 +71,6 @@ class SurveyManager{
 		}
 		if (counter < question.endIndex){
                 incementCounter()
-
             }
             
             return returnView()

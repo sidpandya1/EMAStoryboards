@@ -35,6 +35,9 @@ class ScaledView: UIViewController {
 		slider.addTarget(self, action: #selector(self.sliderValueDidChange(_:)), for: .valueChanged)
 	}
     
+	
+	
+	
 	func showQuestion() {
 		question.text = SurveyManager.Survey.getCurrentQuestion()
 		question.backgroundColor = .systemBlue
@@ -64,7 +67,7 @@ class ScaledView: UIViewController {
         previousButton.addTarget(self, action: #selector(goToPreviousQuestion), for: .touchUpInside)
 
     }
-    
+	
     
     @objc func goToNextQuestion() {
         let nextQuestion = SurveyManager.Survey.nextQuestion()
