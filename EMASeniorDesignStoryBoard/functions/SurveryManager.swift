@@ -79,6 +79,7 @@ class SurveyManager{
         func previousQuestion() -> UIViewController {
             if (counter > question.startIndex){
                 decrementCounter()
+				JSONEncoding.encoderJSON.deleteLastAnswerFromArray()
             }
             return returnView()
         }

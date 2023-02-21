@@ -24,6 +24,8 @@ class ScaledView: UIViewController {
         previousQuestionButton()
         
         nextQuestionButton()
+		
+		navigationItem.hidesBackButton = true  
     }
  
 	func showSlider(){
@@ -54,8 +56,6 @@ class ScaledView: UIViewController {
         nextButton.configuration?.baseBackgroundColor = .systemBlue
         nextButton.configuration?.title = "Next"
         nextButton.addTarget(self, action: #selector(goToNextQuestion), for: .touchUpInside)
-        
-		
 	}
     
     func previousQuestionButton() {
@@ -63,7 +63,6 @@ class ScaledView: UIViewController {
         previousButton.configuration = .filled()
         previousButton.configuration?.baseBackgroundColor = .systemBlue
         previousButton.configuration?.title = "Previous"
-        
         previousButton.addTarget(self, action: #selector(goToPreviousQuestion), for: .touchUpInside)
 
     }
@@ -78,7 +77,6 @@ class ScaledView: UIViewController {
     
     @objc func goToPreviousQuestion() {
         let previousQuestion = SurveyManager.Survey.previousQuestion()
-		JSONEncoding.encoderJSON.deleteLastAnswerFromArray()
         previousQuestion.title = "Scaled View"
         navigationController?.pushViewController(previousQuestion, animated: true)
     }
