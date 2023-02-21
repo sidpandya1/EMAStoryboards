@@ -49,10 +49,12 @@ class SurveyManager{
     
     func incementCounter(){
         counter+=1
+		print("Question Index: ", counter)
     }
     
     func decrementCounter(){
         counter-=1
+		print("Question Index: ", counter)
     }
     
     func returnView() -> UIViewController {
@@ -83,5 +85,9 @@ class SurveyManager{
             }
             return returnView()
         }
+	
+	func returnFirstQuestion() ->UIViewController{
+		returnView()
+	}
  
 }
