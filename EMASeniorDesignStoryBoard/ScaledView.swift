@@ -30,8 +30,8 @@ class ScaledView: UIViewController {
  
 	func showSlider(){
 		self.view.addSubview(slider);
-		slider.minimumValue = 0
-		slider.maximumValue = 4
+		slider.minimumValue = Float(SurveyManager.Survey.getQuestionLowerBound())
+		slider.maximumValue = Float(SurveyManager.Survey.getQuestionUpperBound())
 		slider.isContinuous = false
 		slider.tintColor = .systemBlue
 		slider.addTarget(self, action: #selector(self.sliderValueDidChange(_:)), for: .valueChanged)
