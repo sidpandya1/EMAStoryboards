@@ -35,7 +35,7 @@ class ServerConnect{
                     print(Question)
                 } else {
                     print("Invalid Response")
-                    print(data)
+                    print(String(data: data, encoding: .utf8))
                     print(response)
                     
                 }
