@@ -17,7 +17,6 @@ class FirstScreen: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        serverconnection.connect();
         
         userIDField.placeholder = "User ID"
         userIDField.borderStyle = UITextField.BorderStyle.line

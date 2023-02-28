@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Survery{
+struct Survery: Decodable{
     static let allQuestions: [Question] = Bundle.main.decode(file: "sample.json")
     static let activeQuestion: Question = allQuestions[0]
 }
