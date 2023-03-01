@@ -24,23 +24,41 @@ class ServerConnect{
         
         
     }
-    func receiveSurvey(){
-	
+    func connect(){
         guard let url = URL(string:"https://psubehrendema.org/getSurvey_iPhone.php") else{
             return
+            
         }
-		let task: Void = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
-				if let Question = try? JSONDecoder().decode(Survery.self, from: data) {
+                if let Question = try? JSONDecoder().decode([Question].self, from: data) {
                     print(Question)
                 } else {
-                    print("Error!")
+                    print("Invalid Response")
+                    print(data)
+                    print(response)
+                    
                 }
             } else if let error = error {
                 print("HTTP Request Failed \(error)")
             }
         }
             .resume()
+        
+        
+        //           let decoder = JSONDecoder()
+        //        let questions = try! decoder.decode([Question].self, from: data)
+        //
+        //
+        //            for question in questions{
+        //                print(question.text)
+        //
+        //
+        //            }
+        
+        
+        
+        
     }
     
     

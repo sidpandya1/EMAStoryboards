@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		35029EC92998E9410053602B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35029EC82998E9410053602B /* AppDelegate.swift */; };
 		35029ECB2998E9410053602B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35029ECA2998E9410053602B /* SceneDelegate.swift */; };
-		35029ECD2998E9410053602B /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35029ECC2998E9410053602B /* FirstScreen.swift */; };
+		35029ECD2998E9410053602B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35029ECC2998E9410053602B /* LoginView.swift */; };
 		35029ED32998E9410053602B /* EMASeniorDesignStoryBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 35029ED12998E9410053602B /* EMASeniorDesignStoryBoard.xcdatamodeld */; };
 		35029ED52998E9430053602B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35029ED42998E9430053602B /* Assets.xcassets */; };
 		35029ED82998E9430053602B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35029ED62998E9430053602B /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		35495589299B056C00EFCD92 /* QuestionControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35495588299B056C00EFCD92 /* QuestionControllerViewController.swift */; };
 		35DD48D229A41C89008E3721 /* ScaledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD48D129A41C89008E3721 /* ScaledView.swift */; };
 		35DD48D429A429F1008E3721 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD48D329A429F1008E3721 /* HomeView.swift */; };
-		565459A1299AE2490090B52D /* SurveryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459A0299AE2490090B52D /* SurveryManager.swift */; };
+		565459A1299AE2490090B52D /* SurveyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459A0299AE2490090B52D /* SurveyManager.swift */; };
 		565459A3299AE2A70090B52D /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459A2299AE2A70090B52D /* LocalNotifications.swift */; };
 		565459A6299AE3140090B52D /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459A5299AE3140090B52D /* DataStructures.swift */; };
 		565459A9299AE36F0090B52D /* loginFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459A8299AE36F0090B52D /* loginFunctions.swift */; };
@@ -55,7 +55,7 @@
 		35029EC52998E9410053602B /* EMASeniorDesignStoryBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMASeniorDesignStoryBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35029EC82998E9410053602B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35029ECA2998E9410053602B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		35029ECC2998E9410053602B /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
+		35029ECC2998E9410053602B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		35029ED22998E9410053602B /* EMASeniorDesignStoryBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EMASeniorDesignStoryBoard.xcdatamodel; sourceTree = "<group>"; };
 		35029ED42998E9430053602B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35029ED72998E9430053602B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		35495588299B056C00EFCD92 /* QuestionControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionControllerViewController.swift; sourceTree = "<group>"; };
 		35DD48D129A41C89008E3721 /* ScaledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledView.swift; sourceTree = "<group>"; };
 		35DD48D329A429F1008E3721 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		565459A0299AE2490090B52D /* SurveryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveryManager.swift; sourceTree = "<group>"; };
+		565459A0299AE2490090B52D /* SurveyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyManager.swift; sourceTree = "<group>"; };
 		565459A2299AE2A70090B52D /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 		565459A5299AE3140090B52D /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		565459A8299AE36F0090B52D /* loginFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginFunctions.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 				5654599F299AE1ED0090B52D /* functions */,
 				35029EC82998E9410053602B /* AppDelegate.swift */,
 				35029ECA2998E9410053602B /* SceneDelegate.swift */,
-				35029ECC2998E9410053602B /* FirstScreen.swift */,
+				35029ECC2998E9410053602B /* LoginView.swift */,
 				35DD48D329A429F1008E3721 /* HomeView.swift */,
 				35DD48D129A41C89008E3721 /* ScaledView.swift */,
 				35495588299B056C00EFCD92 /* QuestionControllerViewController.swift */,
@@ -169,7 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				8792A5D129A46C2C0011F4C4 /* JSONEncoding.swift */,
-				565459A0299AE2490090B52D /* SurveryManager.swift */,
+				565459A0299AE2490090B52D /* SurveyManager.swift */,
 				565459A2299AE2A70090B52D /* LocalNotifications.swift */,
 				565459A5299AE3140090B52D /* DataStructures.swift */,
 				565459A8299AE36F0090B52D /* loginFunctions.swift */,
@@ -332,7 +332,7 @@
 				565459AD299AE3C90090B52D /* ServerConnect.swift in Sources */,
 				35029ED32998E9410053602B /* EMASeniorDesignStoryBoard.xcdatamodeld in Sources */,
 				35DD48D429A429F1008E3721 /* HomeView.swift in Sources */,
-				35029ECD2998E9410053602B /* FirstScreen.swift in Sources */,
+				35029ECD2998E9410053602B /* LoginView.swift in Sources */,
 				8792A5D229A46C2C0011F4C4 /* JSONEncoding.swift in Sources */,
 				35029EC92998E9410053602B /* AppDelegate.swift in Sources */,
 				35029ECB2998E9410053602B /* SceneDelegate.swift in Sources */,
@@ -340,7 +340,7 @@
 				35495589299B056C00EFCD92 /* QuestionControllerViewController.swift in Sources */,
 				565459B5299AE49F0090B52D /* Numeric.swift in Sources */,
 				565459AB299AE3950090B52D /* JSONManager.swift in Sources */,
-				565459A1299AE2490090B52D /* SurveryManager.swift in Sources */,
+				565459A1299AE2490090B52D /* SurveyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
