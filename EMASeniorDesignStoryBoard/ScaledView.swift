@@ -70,7 +70,7 @@ class ScaledView: UIViewController {
     
     @objc func goToNextQuestion() {
         let nextQuestion = SurveyManager.Survey.nextQuestion()
-		JSONEncoding.encoderJSON.addAnswerToArray(id: SurveyManager.Survey.getQuestionID(), answer: String(sliderValue))
+        JSONEncoding.encoderJSON.addAnswerToArray(id: SurveyManager.Survey.getQuestionID(), answer: String(sliderValue))
         nextQuestion.title = "Scaled View"
         navigationController?.pushViewController(nextQuestion, animated: true)
     }

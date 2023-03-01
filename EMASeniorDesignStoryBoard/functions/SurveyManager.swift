@@ -13,6 +13,11 @@ class SurveyManager{
     public static let Survey = SurveyManager()
     private var counter: Int = 0
     
+    func getQuestionID() -> Int{
+            let q = question[counter].id
+            return q
+        }
+    
     func getCurrentQuestion() -> String{
         let q = question[counter].text
         return q
