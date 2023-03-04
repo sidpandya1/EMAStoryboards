@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class SurveyManager{
-    private var question: [Question] = Survery.allQuestions
+    private var question: [Question] = SurveyArray.allQuestions
     public static let Survey = SurveyManager()
     private var counter: Int = 0
     
@@ -17,6 +17,7 @@ class SurveyManager{
 		let q = question[counter].id
 		return q
 	}
+	
     func getCurrentQuestion() -> String{
         let q = question[counter].text
         return q

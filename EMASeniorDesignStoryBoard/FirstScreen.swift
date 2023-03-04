@@ -11,13 +11,14 @@ let passwordField: UITextField = UITextField(frame: CGRect(x: 50, y: 280, width:
 let userIDField: UITextField = UITextField(frame: CGRect(x: 50, y: 200, width: 300.00, height: 30.00));
 let loginButton = UIButton()
 let login = LoginFunctions();
+let serverCon = ServerConnect();
 
 class FirstScreen: UIViewController {
     var serverconnection = ServerConnect();
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+		serverCon.receiveSurvey()
         userIDField.placeholder = "User ID"
         userIDField.borderStyle = UITextField.BorderStyle.line
         userIDField.backgroundColor = UIColor.white

@@ -30,7 +30,6 @@
 		565459B3299AE4910090B52D /* Scaled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459B2299AE4910090B52D /* Scaled.swift */; };
 		565459B5299AE49F0090B52D /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459B4299AE49F0090B52D /* Numeric.swift */; };
 		565459B7299AE4AE0090B52D /* Ranged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459B6299AE4AE0090B52D /* Ranged.swift */; };
-		8750451729A43B4400D8FBFF /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 8750451629A43B4400D8FBFF /* sample.json */; };
 		8792A5D229A46C2C0011F4C4 /* JSONEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8792A5D129A46C2C0011F4C4 /* JSONEncoding.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +78,6 @@
 		565459B2299AE4910090B52D /* Scaled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scaled.swift; sourceTree = "<group>"; };
 		565459B4299AE49F0090B52D /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		565459B6299AE4AE0090B52D /* Ranged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranged.swift; sourceTree = "<group>"; };
-		8750451629A43B4400D8FBFF /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 		8792A5D129A46C2C0011F4C4 /* JSONEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncoding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,7 +137,6 @@
 				35DD48D329A429F1008E3721 /* HomeView.swift */,
 				35DD48D129A41C89008E3721 /* ScaledView.swift */,
 				35495588299B056C00EFCD92 /* QuestionControllerViewController.swift */,
-				8750451629A43B4400D8FBFF /* sample.json */,
 				35029ED42998E9430053602B /* Assets.xcassets */,
 				35029ED62998E9430053602B /* LaunchScreen.storyboard */,
 				35029ED92998E9430053602B /* Info.plist */,
@@ -297,7 +294,6 @@
 			files = (
 				35029ED82998E9430053602B /* LaunchScreen.storyboard in Resources */,
 				35029ED52998E9430053602B /* Assets.xcassets in Resources */,
-				8750451729A43B4400D8FBFF /* sample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,9 +6,9 @@
 //
 
 import Foundation
-struct Survery: Decodable{
-    static let allQuestions: [Question] = Bundle.main.decode(file: "sample.json")
-    static let activeQuestion: Question = allQuestions[0]
+struct SurveyArray: Decodable{
+	static let SC = ServerConnect()
+	static var allQuestions = [Question]()
 }
 
 protocol QuestionInterface{
