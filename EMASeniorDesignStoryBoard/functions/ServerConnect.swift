@@ -24,6 +24,11 @@ class ServerConnect{
         
         
     }
+    func regester_for_notif(){
+        
+        
+        
+    }
     func receiveSurvey(){
 		var tempArray = [Question]()
         guard let url = URL(string:"https://psubehrendema.org/getSurvey_iPhone.php") else{

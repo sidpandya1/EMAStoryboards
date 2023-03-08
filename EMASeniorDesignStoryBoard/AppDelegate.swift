@@ -9,13 +9,14 @@ import UIKit
 import CoreData
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate {
 
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-       
+        UIApplication.shared.registerForRemoteNotifications()
+        UNUserNotificationCenter.current().delegate = self // we need to firue out how to get the device token see slack videos and links
+        
         return true
     }
 
