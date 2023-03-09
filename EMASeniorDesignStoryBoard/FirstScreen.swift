@@ -26,6 +26,7 @@ class FirstScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		serverCon.receiveSurvey()
+        
 		self.view.backgroundColor = .white
 			  
 			  

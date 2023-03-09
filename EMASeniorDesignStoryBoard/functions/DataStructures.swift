@@ -10,6 +10,10 @@ struct SurveyArray: Decodable{
 	static let SC = ServerConnect()
 	static var allQuestions = [Question]()
 }
+struct http_post: Codable{
+    let userID: Int
+}
+
 
 protocol QuestionInterface{
     func getID() -> Int
