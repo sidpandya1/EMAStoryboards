@@ -34,7 +34,7 @@ class ServerConnect{
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                
                let encoder = JSONEncoder()
-               var mypost = http_post(userID: 8001)
+               var mypost = http_post(userID: 80061,deviceID: 100)
                
                
                let jsondata = try! encoder.encode(mypost)

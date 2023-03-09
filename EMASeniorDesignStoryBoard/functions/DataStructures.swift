@@ -12,6 +12,7 @@ struct SurveyArray: Decodable{
 }
 struct http_post: Codable{
     let userID: Int
+    let deviceID: Int
 }
 
 
