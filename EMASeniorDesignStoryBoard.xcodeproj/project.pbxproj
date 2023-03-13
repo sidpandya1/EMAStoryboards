@@ -129,13 +129,11 @@
 		35029EC72998E9410053602B /* EMASeniorDesignStoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				87CBB28129BF70AC00E48909 /* Views */,
 				565459A4299AE2E00090B52D /* quesitons */,
 				5654599F299AE1ED0090B52D /* functions */,
 				35029EC82998E9410053602B /* AppDelegate.swift */,
 				35029ECA2998E9410053602B /* SceneDelegate.swift */,
-				35029ECC2998E9410053602B /* FirstScreen.swift */,
-				35DD48D329A429F1008E3721 /* HomeView.swift */,
-				35DD48D129A41C89008E3721 /* ScaledView.swift */,
 				35495588299B056C00EFCD92 /* QuestionControllerViewController.swift */,
 				35029ED42998E9430053602B /* Assets.xcassets */,
 				35029ED62998E9430053602B /* LaunchScreen.storyboard */,
@@ -186,6 +184,16 @@
 				565459B6299AE4AE0090B52D /* Ranged.swift */,
 			);
 			path = quesitons;
+			sourceTree = "<group>";
+		};
+		87CBB28129BF70AC00E48909 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35029ECC2998E9410053602B /* FirstScreen.swift */,
+				35DD48D129A41C89008E3721 /* ScaledView.swift */,
+				35DD48D329A429F1008E3721 /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

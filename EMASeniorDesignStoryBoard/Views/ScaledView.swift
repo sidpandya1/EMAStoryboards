@@ -8,7 +8,7 @@
 import UIKit
 
 class ScaledView: UIViewController {
-	let question = UILabel(frame:CGRect(x: 50, y: 100, width: 300.00, height: 300.00))
+	let question = UILabel(frame:CGRect(x: 37, y: 100, width: 300.00, height: 300.00))
     let previousButton = UIButton(frame:CGRect(x:25,y:600,width:150, height: 50))
 	let nextButton = UIButton(frame:CGRect(x:200,y:600,width:150, height: 50))
     let slider = UISlider(frame:CGRect(x:50,y:445,width:300,height:20))
@@ -34,6 +34,7 @@ class ScaledView: UIViewController {
 		slider.maximumValue = Float(SurveyManager.Survey.getQuestionUpperBound())
 		slider.isContinuous = false
 		slider.tintColor = .systemBlue
+		slider.center.x = self.view.center.x
 		slider.addTarget(self, action: #selector(self.sliderValueDidChange(_:)), for: .valueChanged)
 	}
     
@@ -46,6 +47,7 @@ class ScaledView: UIViewController {
 		question.textColor = UIColor.white
 		question.textAlignment = .center
 		question.numberOfLines = 0
+		question.center.x = self.view.center.x
 		self.view.addSubview(question)
 	}
  
@@ -55,6 +57,7 @@ class ScaledView: UIViewController {
         nextButton.configuration = .filled()
         nextButton.configuration?.baseBackgroundColor = .systemBlue
         nextButton.configuration?.title = "Next"
+		nextButton.center.x = self.view.center.x + 100
         nextButton.addTarget(self, action: #selector(goToNextQuestion), for: .touchUpInside)
 	}
     
@@ -63,6 +66,7 @@ class ScaledView: UIViewController {
         previousButton.configuration = .filled()
         previousButton.configuration?.baseBackgroundColor = .systemBlue
         previousButton.configuration?.title = "Previous"
+		previousButton.center.x = self.view.center.x - 100
         previousButton.addTarget(self, action: #selector(goToPreviousQuestion), for: .touchUpInside)
 
     }
