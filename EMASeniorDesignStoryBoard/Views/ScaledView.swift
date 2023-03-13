@@ -8,8 +8,8 @@
 import UIKit
 
 class ScaledView: UIViewController {
-	let sliderLbDesc = UILabel(frame: CGRect(x: 100, y: 500, width: 20, height: 5))
-	let sliderUbDesc = UILabel(frame: CGRect(x: 100, y: 500, width: 20, height: 5))
+	let sliderLbDesc = UILabel(frame: CGRect(x: 100, y: 465, width: 100, height: 30))
+	let sliderUbDesc = UILabel(frame: CGRect(x: 100, y: 465, width: 100, height: 30))
 	let question = UILabel(frame:CGRect(x: 37, y: 100, width: 300.00, height: 300.00))
     let previousButton = UIButton(frame:CGRect(x:25,y:600,width:150, height: 50))
 	let nextButton = UIButton(frame:CGRect(x:200,y:600,width:150, height: 50))
@@ -34,10 +34,10 @@ class ScaledView: UIViewController {
 		self.view.addSubview(slider);
 		sliderLbDesc.text = SurveyManager.Survey.getlbDesc()
 		sliderUbDesc.text = SurveyManager.Survey.getubDesc()
-		sliderLbDesc.center.x = self.view.center.x - 100
-		sliderUbDesc.center.x = self.view.center.x + 100
-		sliderUbDesc.textColor = .systemBlue
-		sliderLbDesc.textColor = .systemBlue
+		sliderLbDesc.center.x = self.view.center.x - 125
+		sliderUbDesc.center.x = self.view.center.x + 125
+		sliderLbDesc.textAlignment = .center
+		sliderUbDesc.textAlignment = .center
 		slider.minimumValue = Float(SurveyManager.Survey.getQuestionLowerBound())
 		slider.maximumValue = Float(SurveyManager.Survey.getQuestionUpperBound())
 		slider.isContinuous = false
