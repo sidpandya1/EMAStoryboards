@@ -8,6 +8,8 @@
 import UIKit
 
 class ScaledView: UIViewController {
+	let sliderLbDesc = UILabel(frame: CGRect(x: 100, y: 500, width: 20, height: 5))
+	let sliderUbDesc = UILabel(frame: CGRect(x: 100, y: 500, width: 20, height: 5))
 	let question = UILabel(frame:CGRect(x: 37, y: 100, width: 300.00, height: 300.00))
     let previousButton = UIButton(frame:CGRect(x:25,y:600,width:150, height: 50))
 	let nextButton = UIButton(frame:CGRect(x:200,y:600,width:150, height: 50))
@@ -30,12 +32,20 @@ class ScaledView: UIViewController {
  
 	func showSlider(){
 		self.view.addSubview(slider);
+		sliderLbDesc.text = SurveyManager.Survey.getlbDesc()
+		sliderUbDesc.text = SurveyManager.Survey.getubDesc()
+		sliderLbDesc.center.x = self.view.center.x - 100
+		sliderUbDesc.center.x = self.view.center.x + 100
+		sliderUbDesc.textColor = .systemBlue
+		sliderLbDesc.textColor = .systemBlue
 		slider.minimumValue = Float(SurveyManager.Survey.getQuestionLowerBound())
 		slider.maximumValue = Float(SurveyManager.Survey.getQuestionUpperBound())
 		slider.isContinuous = false
 		slider.tintColor = .systemBlue
 		slider.center.x = self.view.center.x
 		slider.addTarget(self, action: #selector(self.sliderValueDidChange(_:)), for: .valueChanged)
+		self.view.addSubview(sliderLbDesc)
+		self.view.addSubview(sliderUbDesc)
 	}
     
 	
@@ -43,6 +53,7 @@ class ScaledView: UIViewController {
 	
 	func showQuestion() {
 		question.text = SurveyManager.Survey.getCurrentQuestion()
+		print(SurveyManager.Survey.getQuestionID())
 		question.backgroundColor = .systemBlue
 		question.textColor = UIColor.white
 		question.textAlignment = .center
@@ -73,16 +84,12 @@ class ScaledView: UIViewController {
 	
     
     @objc func goToNextQuestion() {
-        let nextQuestion = SurveyManager.Survey.nextQuestion()
 		JSONEncoding.encoderJSON.addAnswerToArray(id: SurveyManager.Survey.getQuestionID(), answer: String(sliderValue))
-        nextQuestion.title = "Scaled View"
-        navigationController?.pushViewController(nextQuestion, animated: true)
+        navigationController?.pushViewController(SurveyManager.Survey.nextQuestion(), animated: true)
     }
     
     @objc func goToPreviousQuestion() {
-        let previousQuestion = SurveyManager.Survey.previousQuestion()
-        previousQuestion.title = "Scaled View"
-        navigationController?.pushViewController(previousQuestion, animated: true)
+        navigationController?.pushViewController(SurveyManager.Survey.previousQuestion(), animated: true)
     }
 	
 	@objc func sliderValueDidChange(_ sender:UISlider!)

@@ -22,6 +22,11 @@ class SurveyManager{
         let q = question[counter].text
         return q
     }
+	
+	func getFirstQuestion() -> String{
+		let q = question[0].text
+		return q
+	}
     
     func getQuestionType() -> String{
         let q = question[counter].type
@@ -67,6 +72,11 @@ class SurveyManager{
             }
         }
     
+	func firstQuestion() -> UIViewController{
+		print("Question Index: ", counter)
+		return returnView()
+	}
+	
     func nextQuestion() -> UIViewController {
 		if (counter == question.endIndex-1){
 			print(JSONEncoding.encoderJSON.encodeArray())
@@ -74,10 +84,10 @@ class SurveyManager{
 		}
 		if (counter < question.endIndex){
                 incementCounter()
-            }
+		}
             
-            return returnView()
-        }
+		return returnView()
+	}
         
         func previousQuestion() -> UIViewController {
             if (counter > question.startIndex){

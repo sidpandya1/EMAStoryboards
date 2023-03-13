@@ -24,7 +24,7 @@ class FirstScreen: UIViewController {
     var serverconnection = ServerConnect();
     override func viewDidLoad() {
 		super.viewDidLoad()
-        serverCon.betterrecivesurvey()
+		serverCon.betterrecivesurvey()
 		self.view.backgroundColor = .white
 		emalogo.frame = CGRect(x: 80, y: 45, width: 250, height:200)
 		emalogo.center.x = self.view.center.x
@@ -60,8 +60,7 @@ class FirstScreen: UIViewController {
 			  let userID = userIDField.text!
 			  let password = passwordField.text!
 			  if(login.ValidateUsername(username: String(userID)) == true && login.ValidatePassword(password: password) == true){
-				  let nextQuestion = SurveyManager.Survey.getCurrentQuestion()
-				  navigationController?.pushViewController(SurveyManager.Survey.nextQuestion(), animated: true)
+				  navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
 			  }
 		  }
 
