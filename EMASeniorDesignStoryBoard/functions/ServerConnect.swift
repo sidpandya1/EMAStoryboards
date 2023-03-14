@@ -15,8 +15,6 @@ class ServerConnect{
     
     func Sign_in(password:String,username:String) ->Bool {
         userID = Int(username) ?? 0
-        
-        
         let url = URL(string: "https://psubehrendema.org/checkUser.php")
                guard let requestUrl = url else { fatalError() }
                var request = URLRequest(url: requestUrl)
@@ -24,11 +22,8 @@ class ServerConnect{
                // Set HTTP Request Header
                request.setValue("application/json", forHTTPHeaderField: "Accept")
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-               
                let encoder = JSONEncoder()
                var mypost = http_post(userID: userID,deviceID: deviceID)
-               
-               
                let jsondata = try! encoder.encode(mypost)
                print(jsondata)
                request.httpBody = jsondata
@@ -51,11 +46,10 @@ class ServerConnect{
                // Set HTTP Request Header
                request.setValue("application/json", forHTTPHeaderField: "Accept")
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-               
                let encoder = JSONEncoder()
                var mypost = http_post(userID: 80061,deviceID: 100)
                
-               
+
                let jsondata = try! encoder.encode(mypost)
                print(jsondata)
                request.httpBody = jsondata
