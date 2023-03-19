@@ -43,6 +43,12 @@ class ServerConnect{
                    .resume()
         return
     }
+    func Send_Survey(){
+        
+        
+        
+        
+    }
     func Recieve_Survey(){
         let url = URL(string: "https://psubehrendema.org/getSurvey.php")
                guard let requestUrl = url else { fatalError() }
@@ -52,7 +58,7 @@ class ServerConnect{
                request.setValue("application/json", forHTTPHeaderField: "Accept")
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                let encoder = JSONEncoder()
-               var mypost = http_post(userID: 80061,deviceID: 100)
+               var mypost = http_post(userID: userID,deviceID: deviceID)
                
 
                let jsondata = try! encoder.encode(mypost)

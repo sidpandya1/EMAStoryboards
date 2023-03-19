@@ -18,12 +18,9 @@ let psulogo = UIImageView(image: image2!)
 let serverCon = ServerConnect();
 var loginCheck = false
 class FirstScreen: UIViewController {
-    var serverconnection = ServerConnect();
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = .white
-        
         emalogo.frame = CGRect(x: 80, y: 45, width: 250, height:200)
         emalogo.center.x = self.view.center.x
 		emalogo.center.y = self.view.center.y - 200
