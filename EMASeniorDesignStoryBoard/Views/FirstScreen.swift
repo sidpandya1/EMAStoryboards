@@ -16,13 +16,14 @@ let PSUlogo = "penn_state_behrend_logo_3-4in (1)-1 1"
 let image2 = UIImage(named: PSUlogo)
 let psulogo = UIImageView(image: image2!)
 let serverCon = ServerConnect();
+var loginCheck = false
 class FirstScreen: UIViewController {
     var serverconnection = ServerConnect();
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
-        serverCon.Recieve_Survey()
+        
         emalogo.frame = CGRect(x: 80, y: 45, width: 250, height:200)
         emalogo.center.x = self.view.center.x
 		emalogo.center.y = self.view.center.y - 200
@@ -58,14 +59,18 @@ class FirstScreen: UIViewController {
             
           }
           
+    @objc func setlogincheck(input:Bool){
+        loginCheck = input;
+    }
     @objc func loginFunction() {
         let userID = userIDField.text!
         let password = passwordField.text!
-        if(serverCon.Sign_in(password: password, username: userID) == true){
-            
-            navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
-            
+        serverCon.Sign_in(password: password, username: userID, completion: setlogincheck)
+        if (loginCheck == true){
+            navigationController?.pushViewController(HomeView(), animated: true)
         }
+            
+        
     }
       }
 

@@ -13,7 +13,7 @@ class ServerConnect{
     let Password = ""
     let Username = ""
     
-    func Sign_in(password:String,username:String) ->Bool {
+    func Sign_in(password:String,username:String, completion: @escaping (Bool) -> Void) {
         userID = Int(username) ?? 0
         let url = URL(string: "https://psubehrendema.org/checkUser.php")
                guard let requestUrl = url else { fatalError() }
@@ -29,14 +29,19 @@ class ServerConnect{
                request.httpBody = jsondata
                let task: Void = URLSession.shared.dataTask(with: request) { data, response, error in
                    if let data = data {
-                       print(String(decoding: data, as: UTF8.self))
+                       let output = String(decoding: data, as: UTF8.self)
+                       if(output.contains("true")){
+                           print("true");
+                           completion(true);
+                       }
+                       
                    } else if let error = error {
                        print("HTTP Request Failed \(error)")
                    }
                    print("number of questions:", SurveyArray.allQuestions.count)
                }
                    .resume()
-        return true;
+        return
     }
     func Recieve_Survey(){
         let url = URL(string: "https://psubehrendema.org/getSurvey.php")
