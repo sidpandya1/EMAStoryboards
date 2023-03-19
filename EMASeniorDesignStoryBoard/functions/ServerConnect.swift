@@ -23,11 +23,11 @@ class ServerConnect{
                request.setValue("application/json", forHTTPHeaderField: "Accept")
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                let encoder = JSONEncoder()
-               var mypost = http_post(userID: userID,deviceID: deviceID)
+        let mypost = http_post(userID: userID,deviceID: deviceID)
                let jsondata = try! encoder.encode(mypost)
                print(jsondata)
                request.httpBody = jsondata
-               let task: Void = URLSession.shared.dataTask(with: request) { data, response, error in
+        let _: Void = URLSession.shared.dataTask(with: request) { data, response, error in
                    if let data = data {
                        let output = String(decoding: data, as: UTF8.self)
                        if(output.contains("true")){
@@ -38,7 +38,7 @@ class ServerConnect{
                    } else if let error = error {
                        print("HTTP Request Failed \(error)")
                    }
-                   print("number of questions:", SurveyArray.allQuestions.count)
+                  
                }
                    .resume()
         return
@@ -58,13 +58,13 @@ class ServerConnect{
                request.setValue("application/json", forHTTPHeaderField: "Accept")
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                let encoder = JSONEncoder()
-               var mypost = http_post(userID: userID,deviceID: deviceID)
+        let mypost = http_post(userID: userID,deviceID: deviceID)
                
 
                let jsondata = try! encoder.encode(mypost)
                print(jsondata)
                request.httpBody = jsondata
-               let task: Void = URLSession.shared.dataTask(with: request) { data, response, error in
+        let _: Void = URLSession.shared.dataTask(with: request) { data, response, error in
                    if let data = data {
                        if let Q = try? JSONDecoder().decode([Question].self, from: data) {
                            SurveyArray.allQuestions = Q
