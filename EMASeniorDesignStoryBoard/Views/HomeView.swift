@@ -10,10 +10,11 @@ var check = false
 class HomeView: UIViewController {
     let noQuestion = UILabel(frame:CGRect(x: 50, y: 100, width: 300.00, height: 300.00))
     override func viewDidLoad() {
+		self.view.backgroundColor = .white
         super.viewDidLoad()
         serverCon.Recieve_Survey(completion : check_Survey)
         noQuestion.text = "No Surveys please check back later"
-        noQuestion.textColor = UIColor.white
+        noQuestion.textColor = UIColor.systemBlue
         self.view.addSubview(noQuestion)
         navigationItem.hidesBackButton = true
         setupButton()
@@ -26,7 +27,7 @@ class HomeView: UIViewController {
         view.addSubview(loginButton)
         loginButton.configuration = .filled()
         loginButton.configuration?.baseBackgroundColor = .systemBlue
-        loginButton.configuration?.title = "check Survey"
+        loginButton.configuration?.title = "Load Survey"
         loginButton.center.x = self.view.center.x
         loginButton.center.y = self.view.center.y + 100
         loginButton.addTarget(self, action: #selector(checkSurvey), for: .touchUpInside)
