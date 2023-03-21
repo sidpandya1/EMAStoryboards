@@ -18,58 +18,61 @@ let psulogo = UIImageView(image: image2!)
 let serverCon = ServerConnect();
 var loginCheck = false
 class FirstScreen: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .white
-        emalogo.frame = CGRect(x: 80, y: 45, width: 250, height:200)
-        emalogo.center.x = self.view.center.x
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.view.backgroundColor = .white
+		emalogo.frame = CGRect(x: 80, y: 45, width: 250, height:200)
+		emalogo.center.x = self.view.center.x
 		emalogo.center.y = self.view.center.y - 200
-        view.addSubview(emalogo)
-        psulogo.frame = CGRect(x: 80, y: 500, width: 250, height:100)
-        psulogo.center.x = self.view.center.x
+		view.addSubview(emalogo)
+		psulogo.frame = CGRect(x: 80, y: 500, width: 250, height:100)
+		psulogo.center.x = self.view.center.x
 		psulogo.center.y = self.view.center.y + 250
-        view.addSubview(psulogo)
-        userIDField.placeholder = "User ID"
-        userIDField.borderStyle = UITextField.BorderStyle.line
-        userIDField.backgroundColor = UIColor.white
-        userIDField.center.x = self.view.center.x
+		view.addSubview(psulogo)
+		userIDField.placeholder = "User ID"
+		userIDField.borderStyle = UITextField.BorderStyle.line
+		userIDField.backgroundColor = UIColor.white
+		userIDField.center.x = self.view.center.x
 		userIDField.center.y = self.view.center.y - 50
-        self.view.addSubview(userIDField)
-        passwordField.placeholder = "Password"
-        passwordField.isSecureTextEntry = true
-        passwordField.borderStyle = UITextField.BorderStyle.line
-        passwordField.backgroundColor = UIColor.white
-        passwordField.center.x = self.view.center.x
+		self.view.addSubview(userIDField)
+		passwordField.placeholder = "Password"
+		passwordField.isSecureTextEntry = true
+		passwordField.borderStyle = UITextField.BorderStyle.line
+		passwordField.backgroundColor = UIColor.white
+		passwordField.center.x = self.view.center.x
 		passwordField.center.y = self.view.center.y + 25
-        self.view.addSubview(passwordField)
-        setupButton()
-    }
-          
-          func setupButton() {
-              view.addSubview(loginButton)
-              loginButton.configuration = .filled()
-              loginButton.configuration?.baseBackgroundColor = .systemBlue
-              loginButton.configuration?.title = "Login"
-              loginButton.center.x = self.view.center.x
-			  loginButton.center.y = self.view.center.y + 100
-              loginButton.addTarget(self, action: #selector(loginFunction), for: .touchUpInside)
-            
-          }
-          
-    @objc func setlogincheck(input:Bool){
-        loginCheck = input;
-        
-    }
-    @objc func loginFunction() {
-        let userID = userIDField.text!
-        let password = passwordField.text!
-        serverCon.Sign_in(password: password, username: userID, completion: setlogincheck)
-        Thread.sleep(forTimeInterval: 1)
-        if (loginCheck == true){
-            navigationController?.pushViewController(HomeView(), animated: true)
-        }
-            
-        
-    }
-      }
+		self.view.addSubview(passwordField)
+		setupButton()
+	}
+	
+	func setupButton() {
+		view.addSubview(loginButton)
+		loginButton.configuration = .filled()
+		loginButton.configuration?.baseBackgroundColor = .systemBlue
+		loginButton.configuration?.title = "Login"
+		loginButton.center.x = self.view.center.x
+		loginButton.center.y = self.view.center.y + 100
+		loginButton.addTarget(self, action: #selector(loginFunction), for: .touchUpInside)
+		
+	}
+	
+	@objc func setlogincheck(input:Bool){
+		loginCheck = input;
+		
+	}
+	@objc func loginFunction() {
+		let userID = userIDField.text!
+		let password = passwordField.text!
+		serverCon.Sign_in(password: password, username: userID, completion: setlogincheck)
+		Thread.sleep(forTimeInterval: 1)
+		if (loginCheck == true){
+			serverCon.Recieve_Survey(completion : check_Survey)
+			Thread.sleep(forTimeInterval: 1)
+			navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
+		}
+	}
+	@objc func check_Survey(input:Bool){
+		check = input;
+	}
+}
 
