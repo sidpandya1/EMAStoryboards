@@ -43,7 +43,11 @@ class ServerConnect{
                    .resume()
         return
     }
-    func Send_Survey(){
+    func Send_Survey( completion: @escaping (Bool) -> Void, payload : [Question]){
+        // covert the Question to the type response_Survey so we can add it to the http_post
+        
+        
+        
         let url = URL(string: "https://psubehrendema.org/setSurvey.php")
                guard let requestUrl = url else { fatalError() }
                var request = URLRequest(url: requestUrl)
@@ -52,14 +56,16 @@ class ServerConnect{
                request.setValue("application/json", forHTTPHeaderField: "Accept")
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                let encoder = JSONEncoder()
+        // make this part the http_post_send_survey with the coorespoidng response_Survey from above
         let mypost = http_post(userID: userID,deviceID: deviceID)
-               
+        //if this works that is the last thing
 
                let jsondata = try! encoder.encode(mypost)
                request.httpBody = jsondata
         let _: Void = URLSession.shared.dataTask(with: request) { data, response, error in
                    if let data = data {
-    
+                       
+                       completion(true)
                    } else if let error = error {
                        print("HTTP Request Failed \(error)")
                    }
@@ -94,6 +100,7 @@ class ServerConnect{
                            print("number of questions:", SurveyArray.allQuestions.count)
                            completion(true);
                        } else {
+                           completion(false);
                            print("Error!")
                        }
                    } else if let error = error {

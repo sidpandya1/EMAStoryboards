@@ -36,8 +36,11 @@ class HomeView: UIViewController {
     
     
     @objc func checkSurvey() {
-        
-        navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
+        Thread.sleep(forTimeInterval: 1)
+        if (check == true){
+            navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
+            
+        }
         
     }
 }
