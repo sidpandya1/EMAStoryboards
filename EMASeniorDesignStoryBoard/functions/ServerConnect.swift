@@ -14,19 +14,19 @@ class ServerConnect{
     let Username = ""
     
     func Sign_in(password:String,username:String, completion: @escaping (Bool) -> Void) {
-        userID = Int(username) ?? 0
-        let url = URL(string: "https://psubehrendema.org/checkUser.php")
+        userID = Int(username) ?? 0 // sets it to the vaule of the username defalts to zero if there is not a convertable int from username
+        let url = URL(string: "https://psubehrendema.org/checkUser.php") //give the url of the check user
                guard let requestUrl = url else { fatalError() }
-               var request = URLRequest(url: requestUrl)
-               request.httpMethod = "POST"
-               // Set HTTP Request Header
+               var request = URLRequest(url: requestUrl) // where the rquest is happening
+               request.httpMethod = "POST" // Set HTTP Request Header
                request.setValue("application/json", forHTTPHeaderField: "Accept")
-               request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-               let encoder = JSONEncoder()
-        let mypost = http_post(userID: userID,deviceID: deviceID)
+               request.setValue("application/json", forHTTPHeaderField: "Content-Type") // set expected response type
+               let encoder = JSONEncoder() // encoder for json
+               let mypost = http_post(userID: userID,deviceID: deviceID) // create the http post
+        
                let jsondata = try! encoder.encode(mypost)
                print(jsondata)
-               request.httpBody = jsondata
+               request.httpBody = jsondata // set the body to the json data that was crated earlier
         let _: Void = URLSession.shared.dataTask(with: request) { data, response, error in
                    if let data = data {
                        let output = String(decoding: data, as: UTF8.self)
@@ -43,11 +43,7 @@ class ServerConnect{
                    .resume()
         return
     }
-    func Send_Survey( completion: @escaping (Bool) -> Void, payload : [Question]){
-        // covert the Question to the type response_Survey so we can add it to the http_post
-        
-        
-        
+    func Send_Survey( completion: @escaping (Bool) -> Void, payload : [Answer]){
         let url = URL(string: "https://psubehrendema.org/setSurvey.php")
                guard let requestUrl = url else { fatalError() }
                var request = URLRequest(url: requestUrl)
@@ -57,7 +53,7 @@ class ServerConnect{
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                let encoder = JSONEncoder()
         // make this part the http_post_send_survey with the coorespoidng response_Survey from above
-        let mypost = http_post(userID: userID,deviceID: deviceID)
+        let mypost = http_post_send_survey(userID: userID,deviceID: deviceID,survey: payload)
         //if this works that is the last thing
 
                let jsondata = try! encoder.encode(mypost)
@@ -68,6 +64,7 @@ class ServerConnect{
                        completion(true)
                    } else if let error = error {
                        print("HTTP Request Failed \(error)")
+                       completion(false)
                    }
                }
                    .resume()

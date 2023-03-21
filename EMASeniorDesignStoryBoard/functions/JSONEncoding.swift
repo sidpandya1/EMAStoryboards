@@ -11,16 +11,11 @@ class JSONEncoding{
 	
 	public static let encoderJSON = JSONEncoding()
 	
-	struct Answer: Codable{
-		let id: Int
-		let answer: String
-        
-        // figure out what this need be exaclty
-	}
+	
 	
 	private var arrayOfAnswers: [Answer] = []
 	
-	func addAnswerToArray(id: Int, answer: String){
+	func addAnswerToArray(id: String, answer: String){
 		let currentAnswer = Answer(id: id, answer: answer)
 		arrayOfAnswers.append(currentAnswer)
 		print("added answer to array")
@@ -40,5 +35,7 @@ class JSONEncoding{
 		let data = try! encoder.encode(arrayOfAnswers)
 		return String(data: data, encoding: .utf8)!
 	}
-	
+    func getarrayOfAnswers() -> [Answer]{
+        return arrayOfAnswers
+    }
 }

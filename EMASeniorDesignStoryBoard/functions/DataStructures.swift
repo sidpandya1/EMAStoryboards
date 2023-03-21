@@ -19,11 +19,12 @@ struct http_post: Codable{
 struct http_post_send_survey: Codable{
     let userID: Int
     let deviceID: Int
-    let survey: [response_Survey]
+    let survey: [Answer]
 }
-struct response_Survey: Codable{
-    let questionID: Int
-    let response: String
+struct Answer: Codable{
+    let id: String
+    let answer: String
+    // figure out what this need be exaclty
 }
 
 

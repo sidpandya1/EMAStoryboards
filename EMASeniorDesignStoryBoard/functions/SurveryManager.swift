@@ -10,6 +10,7 @@ import UIKit
 
 class SurveyManager{
     private var question: [Question] = SurveyArray.allQuestions
+    private var max = SurveyArray.allQuestions.count
     public static let Survey = SurveyManager()
     private var counter: Int = 0
     
@@ -100,5 +101,9 @@ class SurveyManager{
 	func returnFirstQuestion() ->UIViewController{
 		returnView()
 	}
+    func returnMaxQuestion() -> Int{
+        
+        return max;
+    }
  
 }

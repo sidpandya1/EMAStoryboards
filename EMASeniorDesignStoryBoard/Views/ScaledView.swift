@@ -17,6 +17,7 @@ class ScaledView: UIViewController {
 	var sliderValue = 0.0
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 		self.view.backgroundColor = .white
 		showQuestion()
@@ -84,7 +85,11 @@ class ScaledView: UIViewController {
 	
     
     @objc func goToNextQuestion() {
-		JSONEncoding.encoderJSON.addAnswerToArray(id: SurveyManager.Survey.getQuestionID(), answer: String(sliderValue))
+		JSONEncoding.encoderJSON.addAnswerToArray(id: String(SurveyManager.Survey.getQuestionID()), answer: String(sliderValue))
+        
+        if(Int(SurveyManager.Survey.getQuestionID()) == SurveyManager.Survey.returnMaxQuestion()){
+            serverCon.Send_Survey(completion: send_survey(input:), payload: JSONEncoding.encoderJSON.getarrayOfAnswers())
+        }
         navigationController?.pushViewController(SurveyManager.Survey.nextQuestion(), animated: true)
     }
     
@@ -98,5 +103,9 @@ class ScaledView: UIViewController {
 		
 		sliderValue = Double(sender.value)
 	}
+    
+    @objc func send_survey(input:Bool){
+        check = input;
+    }
 
 }
