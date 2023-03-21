@@ -58,11 +58,13 @@ class FirstScreen: UIViewController {
           
     @objc func setlogincheck(input:Bool){
         loginCheck = input;
+        
     }
     @objc func loginFunction() {
         let userID = userIDField.text!
         let password = passwordField.text!
         serverCon.Sign_in(password: password, username: userID, completion: setlogincheck)
+        Thread.sleep(forTimeInterval: 1)
         if (loginCheck == true){
             navigationController?.pushViewController(HomeView(), animated: true)
         }

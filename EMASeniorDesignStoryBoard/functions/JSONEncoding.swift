@@ -14,6 +14,8 @@ class JSONEncoding{
 	struct Answer: Codable{
 		let id: Int
 		let answer: String
+        
+        // figure out what this need be exaclty
 	}
 	
 	private var arrayOfAnswers: [Answer] = []
