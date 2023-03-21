@@ -16,6 +16,11 @@ struct http_post: Codable{
     let userID: Int
     let deviceID: Int
 }
+struct http_post_send_survey: Codable{
+    let userID: Int
+    let deviceID: Int
+    let survey: Question
+}
 
 
 protocol QuestionInterface{

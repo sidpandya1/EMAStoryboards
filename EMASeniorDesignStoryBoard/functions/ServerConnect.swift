@@ -31,7 +31,7 @@ class ServerConnect{
                    if let data = data {
                        let output = String(decoding: data, as: UTF8.self)
                        if(output.contains("true")){
-                           print("true");
+                         
                            completion(true);
                        }
                        
@@ -44,12 +44,34 @@ class ServerConnect{
         return
     }
     func Send_Survey(){
+        let url = URL(string: "https://psubehrendema.org/setSurvey.php")
+               guard let requestUrl = url else { fatalError() }
+               var request = URLRequest(url: requestUrl)
+               request.httpMethod = "POST"
+               // Set HTTP Request Header
+               request.setValue("application/json", forHTTPHeaderField: "Accept")
+               request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+               let encoder = JSONEncoder()
+        let mypost = http_post(userID: userID,deviceID: deviceID)
+               
+
+               let jsondata = try! encoder.encode(mypost)
+               request.httpBody = jsondata
+        let _: Void = URLSession.shared.dataTask(with: request) { data, response, error in
+                   if let data = data {
+    
+                   } else if let error = error {
+                       print("HTTP Request Failed \(error)")
+                   }
+               }
+                   .resume()
+        
         
         
         
         
     }
-    func Recieve_Survey(){
+    func Recieve_Survey( completion: @escaping (Bool) -> Void){
         let url = URL(string: "https://psubehrendema.org/getSurvey.php")
                guard let requestUrl = url else { fatalError() }
                var request = URLRequest(url: requestUrl)
@@ -62,20 +84,22 @@ class ServerConnect{
                
 
                let jsondata = try! encoder.encode(mypost)
-               print(jsondata)
+               
                request.httpBody = jsondata
         let _: Void = URLSession.shared.dataTask(with: request) { data, response, error in
                    if let data = data {
                        if let Q = try? JSONDecoder().decode([Question].self, from: data) {
                            SurveyArray.allQuestions = Q
                            print(SurveyArray.allQuestions)
+                           print("number of questions:", SurveyArray.allQuestions.count)
+                           completion(true);
                        } else {
                            print("Error!")
                        }
                    } else if let error = error {
                        print("HTTP Request Failed \(error)")
                    }
-                   print("number of questions:", SurveyArray.allQuestions.count)
+                   
                }
                    .resume()
         
