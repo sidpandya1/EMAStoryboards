@@ -7,10 +7,10 @@
 
 import Foundation
 struct SurveyArray: Decodable{
-	static let SC = ServerConnect()
-	static var allQuestions = [Question]()
-	static var login_response = [loginResponse]()
-	
+    static let SC = ServerConnect()
+    static var allQuestions = [Question]()
+    static var login_response = [loginResponse]()
+    
 }
 struct http_post: Codable{
     let userID: Int
@@ -54,6 +54,6 @@ struct Question: Codable {
 }
 
 struct loginResponse: Codable{
-	let exists: Bool
-	let deviceID: Int
+    let exists: Bool
+    let deviceID: Int
 }
