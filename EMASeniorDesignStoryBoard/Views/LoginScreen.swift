@@ -17,7 +17,7 @@ let image2 = UIImage(named: PSUlogo)
 let psulogo = UIImageView(image: image2!)
 let serverCon = ServerConnect();
 var loginCheck = false
-class FirstScreen: UIViewController {
+class LoginScreen: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.view.backgroundColor = .white

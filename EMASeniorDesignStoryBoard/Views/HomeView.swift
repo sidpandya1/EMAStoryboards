@@ -12,7 +12,6 @@ class HomeView: UIViewController {
     override func viewDidLoad() {
 		self.view.backgroundColor = .white
         super.viewDidLoad()
-        serverCon.Recieve_Survey(completion : check_Survey)
         noQuestion.text = "No Surveys please check back later"
         noQuestion.textColor = UIColor.systemBlue
         self.view.addSubview(noQuestion)
@@ -36,10 +35,8 @@ class HomeView: UIViewController {
     
     
     @objc func checkSurvey() {
-        Thread.sleep(forTimeInterval: 1)
         if (check == true){
             navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
-            
         }
         
     }
