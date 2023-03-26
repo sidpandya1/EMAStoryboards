@@ -22,12 +22,12 @@ struct http_post_send_survey: Codable{
     let survey: [Answer]
 }
 struct Answer: Codable{
-    let id: String
-    let answer: String
+    let questionID: Int
+    let response: String
     // figure out what this need be exaclty
 }
 
-
+///askfdjaskljf
 
 protocol QuestionInterface{
     func getID() -> Int

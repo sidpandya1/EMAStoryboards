@@ -6,9 +6,6 @@
 //
 
 import UIKit
-private let question = UILabel(frame:CGRect(x: 37, y: 100, width: 300.00, height: 300.00))
-private let previousButton = UIButton(frame:CGRect(x:25,y:600,width:150, height: 50))
-private let nextButton = UIButton(frame:CGRect(x:200,y:600,width:150, height: 50))
 private let answerField = UITextField(frame: CGRect(x: 0, y: 250, width: 300.00, height:100.00));
 class OpenEndedView: UIViewController{
 	override func viewDidLoad() {
@@ -63,7 +60,7 @@ class OpenEndedView: UIViewController{
 
 	}
 	@objc private func goToNextQuestion() {
-		JSONEncoding.encoderJSON.addAnswerToArray(id: String(SurveyManager.Survey.getQuestionID()), answer: answerField.text!)
+        JSONEncoding.encoderJSON.addAnswerToArray(questionID: SurveyManager.Survey.getQuestionID() , response: answerField.text!)
 		answerField.text?.removeAll()
 		navigationController?.pushViewController(SurveyManager.Survey.nextQuestion(), animated: true)
 	}

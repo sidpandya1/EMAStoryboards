@@ -68,7 +68,14 @@ class LoginScreen: UIViewController {
 		if (loginCheck == true){
 			serverCon.Recieve_Survey(completion : check_Survey)
 			Thread.sleep(forTimeInterval: 1)
-			navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
+            if(SurveyManager.Survey.getCounter() == 0){
+                navigationController?.pushViewController(HomeView(), animated: true)
+            }
+            else{
+                navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
+                
+            }
+			
 		}
 	}
 	@objc func check_Survey(input:Bool){

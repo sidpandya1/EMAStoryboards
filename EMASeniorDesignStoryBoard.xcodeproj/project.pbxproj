@@ -25,12 +25,10 @@
 		565459AD299AE3C90090B52D /* ServerConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459AC299AE3C90090B52D /* ServerConnect.swift */; };
 		87E676B729CF8D1F009CA167 /* OpenEndedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E676B629CF8D1F009CA167 /* OpenEndedView.swift */; };
 		87E676B829CF8D1F009CA167 /* OpenEndedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E676B629CF8D1F009CA167 /* OpenEndedView.swift */; };
-		87E676BD29CF8F42009CA167 /* JSONEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E676BC29CF8F42009CA167 /* JSONEncoding.swift */; };
-		87E676BF29CF8F6B009CA167 /* SurveryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E676BE29CF8F6B009CA167 /* SurveryManager.swift */; };
-		87E676C129CF900E009CA167 /* ScaledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E676C029CF900E009CA167 /* ScaledView.swift */; };
-		87E676C229CF900E009CA167 /* ScaledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E676C029CF900E009CA167 /* ScaledView.swift */; };
-		87E676C429D0827C009CA167 /* TimedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E676C329D0827B009CA167 /* TimedView.swift */; };
-		87E676C529D0827C009CA167 /* TimedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E676C329D0827B009CA167 /* TimedView.swift */; };
+		FD0ECF0C29D0CEC5008EDD8F /* ScaledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECF0B29D0CEC5008EDD8F /* ScaledView.swift */; };
+		FD0ECF0E29D0CED5008EDD8F /* TimedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECF0D29D0CED5008EDD8F /* TimedView.swift */; };
+		FD0ECF1229D0CF39008EDD8F /* JSONEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECF1129D0CF39008EDD8F /* JSONEncoding.swift */; };
+		FD0ECF1429D0CFAB008EDD8F /* SurveyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECF1329D0CFAB008EDD8F /* SurveyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,10 +70,10 @@
 		565459AA299AE3950090B52D /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		565459AC299AE3C90090B52D /* ServerConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnect.swift; sourceTree = "<group>"; };
 		87E676B629CF8D1F009CA167 /* OpenEndedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenEndedView.swift; sourceTree = "<group>"; };
-		87E676BC29CF8F42009CA167 /* JSONEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONEncoding.swift; path = "../../../../.Trash/EMAStoryboards 4.10.37 PM/EMASeniorDesignStoryBoard/functions/JSONEncoding.swift"; sourceTree = "<group>"; };
-		87E676BE29CF8F6B009CA167 /* SurveryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveryManager.swift; path = "../../../../.Trash/EMAStoryboards 4.10.37 PM/EMASeniorDesignStoryBoard/functions/SurveryManager.swift"; sourceTree = "<group>"; };
-		87E676C029CF900E009CA167 /* ScaledView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaledView.swift; path = "../../../../.Trash/EMAStoryboards 4.10.37 PM/EMASeniorDesignStoryBoard/Views/ScaledView.swift"; sourceTree = "<group>"; };
-		87E676C329D0827B009CA167 /* TimedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimedView.swift; path = ../../../../.Trash/TimedView.swift; sourceTree = "<group>"; };
+		FD0ECF0B29D0CEC5008EDD8F /* ScaledView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaledView.swift; sourceTree = "<group>"; };
+		FD0ECF0D29D0CED5008EDD8F /* TimedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedView.swift; sourceTree = "<group>"; };
+		FD0ECF1129D0CF39008EDD8F /* JSONEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEncoding.swift; sourceTree = "<group>"; };
+		FD0ECF1329D0CFAB008EDD8F /* SurveyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,13 +157,13 @@
 		5654599F299AE1ED0090B52D /* functions */ = {
 			isa = PBXGroup;
 			children = (
-				87E676BC29CF8F42009CA167 /* JSONEncoding.swift */,
-				87E676BE29CF8F6B009CA167 /* SurveryManager.swift */,
 				565459A2299AE2A70090B52D /* LocalNotifications.swift */,
 				565459A5299AE3140090B52D /* DataStructures.swift */,
 				565459A8299AE36F0090B52D /* loginFunctions.swift */,
 				565459AA299AE3950090B52D /* JSONManager.swift */,
 				565459AC299AE3C90090B52D /* ServerConnect.swift */,
+				FD0ECF1129D0CF39008EDD8F /* JSONEncoding.swift */,
+				FD0ECF1329D0CFAB008EDD8F /* SurveyManager.swift */,
 			);
 			path = functions;
 			sourceTree = "<group>";
@@ -173,10 +171,10 @@
 		87CBB28129BF70AC00E48909 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FD0ECF0D29D0CED5008EDD8F /* TimedView.swift */,
+				FD0ECF0B29D0CEC5008EDD8F /* ScaledView.swift */,
 				87E676B629CF8D1F009CA167 /* OpenEndedView.swift */,
-				87E676C329D0827B009CA167 /* TimedView.swift */,
 				35029ECC2998E9410053602B /* LoginScreen.swift */,
-				87E676C029CF900E009CA167 /* ScaledView.swift */,
 				35DD48D329A429F1008E3721 /* HomeView.swift */,
 			);
 			path = Views;
@@ -312,21 +310,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87E676BD29CF8F42009CA167 /* JSONEncoding.swift in Sources */,
 				565459A6299AE3140090B52D /* DataStructures.swift in Sources */,
-				87E676C129CF900E009CA167 /* ScaledView.swift in Sources */,
 				565459A9299AE36F0090B52D /* loginFunctions.swift in Sources */,
-				87E676BF29CF8F6B009CA167 /* SurveryManager.swift in Sources */,
 				565459A3299AE2A70090B52D /* LocalNotifications.swift in Sources */,
 				565459AD299AE3C90090B52D /* ServerConnect.swift in Sources */,
 				35029ED32998E9410053602B /* EMASeniorDesignStoryBoard.xcdatamodeld in Sources */,
+				FD0ECF0C29D0CEC5008EDD8F /* ScaledView.swift in Sources */,
 				35DD48D429A429F1008E3721 /* HomeView.swift in Sources */,
+				FD0ECF1429D0CFAB008EDD8F /* SurveyManager.swift in Sources */,
 				35029ECD2998E9410053602B /* LoginScreen.swift in Sources */,
 				35029EC92998E9410053602B /* AppDelegate.swift in Sources */,
 				35029ECB2998E9410053602B /* SceneDelegate.swift in Sources */,
-				87E676C429D0827C009CA167 /* TimedView.swift in Sources */,
+				FD0ECF0E29D0CED5008EDD8F /* TimedView.swift in Sources */,
 				35495589299B056C00EFCD92 /* QuestionControllerViewController.swift in Sources */,
 				565459AB299AE3950090B52D /* JSONManager.swift in Sources */,
+				FD0ECF1229D0CF39008EDD8F /* JSONEncoding.swift in Sources */,
 				87E676B729CF8D1F009CA167 /* OpenEndedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,8 +335,6 @@
 			files = (
 				35029EE32998E9430053602B /* EMASeniorDesignStoryBoardTests.swift in Sources */,
 				87E676B829CF8D1F009CA167 /* OpenEndedView.swift in Sources */,
-				87E676C529D0827C009CA167 /* TimedView.swift in Sources */,
-				87E676C229CF900E009CA167 /* ScaledView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

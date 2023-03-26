@@ -69,7 +69,7 @@ class TimedView: UIViewController{
 	
 	
 	@objc func goToNextQuestion() {
-		JSONEncoding.encoderJSON.addAnswerToArray(id: String(SurveyManager.Survey.getQuestionID()), answer: String())
+		JSONEncoding.encoderJSON.addAnswerToArray(questionID: SurveyManager.Survey.getQuestionID(), response: String())
 		navigationController?.pushViewController(SurveyManager.Survey.nextQuestion(), animated: true)
 	}
 	

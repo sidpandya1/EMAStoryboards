@@ -25,17 +25,22 @@ class ServerConnect{
                let mypost = http_post(userID: userID,deviceID: deviceID) // create the http post
         
                let jsondata = try! encoder.encode(mypost)
-               print(jsondata)
+               
                request.httpBody = jsondata // set the body to the json data that was crated earlier
         let _: Void = URLSession.shared.dataTask(with: request) { data, response, error in
                    if let data = data {
                        let output = String(decoding: data, as: UTF8.self)
                        if(output.contains("true")){
-                         
+                           print("valid user");
                            completion(true);
+                       }
+                       else{
+                           print("invalid user")
+                           completion(false)
                        }
                        
                    } else if let error = error {
+                       completion(false)
                        print("HTTP Request Failed \(error)")
                    }
                   
@@ -57,10 +62,11 @@ class ServerConnect{
         //if this works that is the last thing
 
                let jsondata = try! encoder.encode(mypost)
+            print("Survey response to be sent",jsondata)
                request.httpBody = jsondata
         let _: Void = URLSession.shared.dataTask(with: request) { data, response, error in
                    if let data = data {
-                       
+                       print("Server response to send survey",String(decoding: data, as: UTF8.self) )
                        completion(true)
                    } else if let error = error {
                        print("HTTP Request Failed \(error)")
@@ -97,8 +103,8 @@ class ServerConnect{
                            print("number of questions:", SurveyArray.allQuestions.count)
                            completion(true);
                        } else {
+                           print("No avaliable survey")
                            completion(false);
-                           print("Error!")
                        }
                    } else if let error = error {
                        print("HTTP Request Failed \(error)")

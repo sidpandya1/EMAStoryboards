@@ -86,10 +86,10 @@ class ScaledView: UIViewController {
     
     
     @objc func goToNextQuestion() {
-        JSONEncoding.encoderJSON.addAnswerToArray(id: String(SurveyManager.Survey.getQuestionID()), answer: String(sliderValue))
+        JSONEncoding.encoderJSON.addAnswerToArray(questionID:SurveyManager.Survey.getQuestionID(), response: String(Int(sliderValue)))
         
-        if(Int(SurveyManager.Survey.getQuestionID()) == SurveyManager.Survey.returnMaxQuestion()){
-            serverCon.Send_Survey(completion: send_survey(input:), payload: JSONEncoding.encoderJSON.getArrayOfAnswers())
+        if(Int(SurveyManager.Survey.getCounter()) == SurveyManager.Survey.returnMaxQuestion()){
+            serverCon.Send_Survey(completion: send_survey, payload: JSONEncoding.encoderJSON.getArrayOfAnswers())
         }
         navigationController?.pushViewController(SurveyManager.Survey.nextQuestion(), animated: true)
     }
