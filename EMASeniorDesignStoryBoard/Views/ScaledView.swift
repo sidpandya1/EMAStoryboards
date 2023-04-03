@@ -15,6 +15,7 @@ class ScaledView: UIViewController {
 	private let nextButton = UIButton(frame:CGRect(x:200,y:600,width:150, height: 50))
 	private let slider = UISlider(frame:CGRect(x:50,y:445,width:300,height:20))
 	private var sliderValue = 0.0
+	private let step: Float = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,7 @@ class ScaledView: UIViewController {
 		sliderUbDesc.sizeToFit()
         slider.minimumValue = Float(SurveyManager.Survey.getQuestionLowerBound())
         slider.maximumValue = Float(SurveyManager.Survey.getQuestionUpperBound())
-        slider.isContinuous = false
+        slider.isContinuous = true
         slider.tintColor = .systemBlue
         slider.center.x = self.view.center.x
         slider.addTarget(self, action: #selector(self.sliderValueDidChange(_:)), for: .valueChanged)
@@ -86,7 +87,7 @@ class ScaledView: UIViewController {
     
     
     @objc func goToNextQuestion() {
-        JSONEncoding.encoderJSON.addAnswerToArray(questionID:SurveyManager.Survey.getQuestionID(), response: String(Int(sliderValue)))
+        JSONEncoding.encoderJSON.addAnswerToArray(questionID:SurveyManager.Survey.getQuestionID(), response: String(sliderValue))
         
         if(Int(SurveyManager.Survey.getCounter()) == SurveyManager.Survey.returnMaxQuestion()){
             serverCon.Send_Survey(completion: send_survey, payload: JSONEncoding.encoderJSON.getArrayOfAnswers())
@@ -101,8 +102,10 @@ class ScaledView: UIViewController {
     @objc func sliderValueDidChange(_ sender:UISlider!)
     {
         print("Slider value changed")
+		let roundedStepValue = round(sender.value / step) * step
+		sender.value = roundedStepValue
         
-        sliderValue = Double(sender.value)
+        sliderValue = sender.value 
     }
     
     @objc func send_survey(input:Bool){

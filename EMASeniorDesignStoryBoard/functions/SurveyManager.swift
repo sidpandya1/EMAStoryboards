@@ -76,6 +76,10 @@ class SurveyManager{
             switch question[counter].type{
             case "Scaled":
                 return (ScaledView())
+			case "Timed":
+				return(TimedView())
+			case "OpenEnded":
+				return(OpenEndedView())
             default:
                 return (HomeView())
             }
