@@ -51,7 +51,7 @@ class ScaledView: UIViewController {
     }
     
     
-    
+    ///
     
     func showQuestion() {
         question.text = SurveyManager.Survey.getCurrentQuestion()
