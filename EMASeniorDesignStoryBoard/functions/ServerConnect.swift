@@ -99,6 +99,7 @@ class ServerConnect{
                    if let data = data {
                        if let Q = try? JSONDecoder().decode([Question].self, from: data) {
                            SurveyArray.allQuestions = Q
+                           SurveyManager.Survey.setSurvey(input: Q)
                            print(SurveyArray.allQuestions)
                            print("number of questions:", SurveyArray.allQuestions.count)
                            completion(true);

@@ -39,15 +39,12 @@ class HomeView: UIViewController {
         
         serverCon.Recieve_Survey(completion : check_Survey)
         Thread.sleep(forTimeInterval: 1)
-        if(SurveyManager.Survey.getCounter() == 0){
-        }
-        else{
-            
-            
+    
+       
             if (check == true){
                 navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
             }
-        }
+        
         
     }
 }
