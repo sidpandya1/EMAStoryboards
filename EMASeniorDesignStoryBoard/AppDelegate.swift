@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate {
@@ -17,7 +18,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
         UIApplication.shared.registerForRemoteNotifications()
         UNUserNotificationCenter.current().delegate = self // we need to firue out how to get the device token see slack videos and links
         
+        //request permission to display notifications
+        let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+                if let error = error {
+                    // Handle the error
+                    print("Error requesting authorization: \(error.localizedDescription)")
+                    return
+                }
+                
+                if granted {
+                    // Register for remote notifications
+                    application.registerForRemoteNotifications()
+                } else {
+                    // Handle denied authorization
+                }
+            }
+       
+        // Set UNUserNotificationCenterDelegate
+        
+        center.delegate = self
+        
         return true
+    }
+    
+    // Token Handling
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // Convert the device token to a string
+        let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        print("Device token: \(token)")
+        
+        // TODO: Send the device token to your server
+        
     }
 
     // MARK: UISceneSession Lifecycle
@@ -32,6 +64,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+
+    // notif handler background
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // Handle the notification
+        
+        // TODO: Navigate to the appropriate screen in the app
+        
+        completionHandler()
+    }
+    
+    // Notification handling foreground
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // Handle the notification
+        
+        // Show an alert
+        completionHandler([.alert])
     }
 
     // MARK: - Core Data stack
@@ -62,6 +112,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
         })
         return container
     }()
+    
+    
+    
 
     // MARK: - Core Data Saving support
 
