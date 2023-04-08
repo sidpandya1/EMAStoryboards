@@ -128,5 +128,9 @@ class SurveyManager{
         return counter;
         
     }
+	
+	func logout() -> UIViewController{
+		return LoginScreen()
+	}
  
 }
