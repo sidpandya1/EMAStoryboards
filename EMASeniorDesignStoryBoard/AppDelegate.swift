@@ -9,6 +9,8 @@ import UIKit
 import CoreData
 import UserNotifications
 
+
+var token = ""
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate {
 
@@ -16,8 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.shared.registerForRemoteNotifications()
-        UNUserNotificationCenter.current().delegate = self // we need to firue out how to get the device token see slack videos and links
-        
+        UNUserNotificationCenter.current().delegate = self
         //request permission to display notifications
         let center = UNUserNotificationCenter.current()
             center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
@@ -45,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
     // Token Handling
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Convert the device token to a string
-        let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
         print("Device token: \(token)")
         
         // TODO: Send the device token to your server
