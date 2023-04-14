@@ -8,39 +8,47 @@
 import UIKit
 import CoreData
 import UserNotifications
+//import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate {
-
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        UIApplication.shared.registerForRemoteNotifications()
-        UNUserNotificationCenter.current().delegate = self // we need to firue out how to get the device token see slack videos and links
-        
-        //request permission to display notifications
+    //request push notifications
+    func requestPushNotificationPermission() {
         let center = UNUserNotificationCenter.current()
-            center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-                if let error = error {
-                    // Handle the error
-                    print("Error requesting authorization: \(error.localizedDescription)")
-                    return
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if let error = error {
+                // Handle the error
+                print("Error: \(error)")
+            }
+            
+            //print("Error requesting authorization: \(error.localizedDescription)")
+            if granted {
+                // Register for remote notifications
+                // Ensure that registration happens on the main thread.
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
                 }
-                
-                if granted {
-                    // Register for remote notifications
-                    application.registerForRemoteNotifications()
-                } else {
-                    // Handle denied authorization
+            } else {
+                // Handle denied authorization
+                func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+                    print("Failed to register for remote notifications: \(error)")
                 }
             }
-       
-        // Set UNUserNotificationCenterDelegate
+            center.delegate = self
+        }
+    }
+    
+    // Override point for customization after application launch.
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //FirebaseApp.configure()
+        requestPushNotificationPermission()
         
-        center.delegate = self
+        UNUserNotificationCenter.current().delegate = self // we need to firue out how to get the device token see slack videos and links
         
         return true
     }
+        
     
     // Token Handling
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
