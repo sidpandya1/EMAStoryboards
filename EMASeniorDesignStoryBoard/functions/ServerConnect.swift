@@ -22,7 +22,7 @@ class ServerConnect{
                request.setValue("application/json", forHTTPHeaderField: "Accept")
                request.setValue("application/json", forHTTPHeaderField: "Content-Type") // set expected response type
                let encoder = JSONEncoder() // encoder for json
-               let mypost = http_post(userID: userID,deviceID: deviceID) // create the http post
+               let mypost = http_post(userID: userID,deviceID: deviceID,notificationToken: token, firebaseUserToken: 0) // create the http post
         
                let jsondata = try! encoder.encode(mypost)
                
@@ -89,7 +89,7 @@ class ServerConnect{
                request.setValue("application/json", forHTTPHeaderField: "Accept")
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                let encoder = JSONEncoder()
-        let mypost = http_post(userID: userID,deviceID: deviceID)
+        let mypost = http_post(userID: userID,deviceID: deviceID,notificationToken: token,firebaseUserToken: 0)
                
 
                let jsondata = try! encoder.encode(mypost)
@@ -99,6 +99,7 @@ class ServerConnect{
                    if let data = data {
                        if let Q = try? JSONDecoder().decode([Question].self, from: data) {
                            SurveyArray.allQuestions = Q
+                           SurveyManager.Survey.setSurvey(input: Q)
                            print(SurveyArray.allQuestions)
                            print("number of questions:", SurveyArray.allQuestions.count)
                            completion(true);

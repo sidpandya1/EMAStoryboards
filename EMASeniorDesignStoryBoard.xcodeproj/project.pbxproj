@@ -174,8 +174,8 @@
 				FD0ECF0D29D0CED5008EDD8F /* TimedView.swift */,
 				FD0ECF0B29D0CEC5008EDD8F /* ScaledView.swift */,
 				87E676B629CF8D1F009CA167 /* OpenEndedView.swift */,
-				35029ECC2998E9410053602B /* LoginScreen.swift */,
 				35DD48D329A429F1008E3721 /* HomeView.swift */,
+				35029ECC2998E9410053602B /* LoginScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -22,6 +22,17 @@ class SurveyManager{
     public static let Survey = SurveyManager()
     private var counter: Int = 0
     
+    func resetCounter(){
+        counter = 0
+        
+    }
+    func resetSurvey(){
+        question.removeAll()
+    }
+    func setSurvey(input:[Question]){
+        question = input
+        
+    }
     func getQuestionID() -> Int{
         let q = question[counter].id
         return q
@@ -117,5 +128,9 @@ class SurveyManager{
         return counter;
         
     }
+	
+	func logout() -> UIViewController{
+		return LoginScreen()
+	}
  
 }

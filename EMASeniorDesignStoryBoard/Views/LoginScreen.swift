@@ -60,28 +60,35 @@ class LoginScreen: UIViewController {
 		loginCheck = input;
 		
 	}
-    @objc func loginFunction() {
-            let userID = userIDField.text!
-            let password = passwordField.text!
-            serverCon.Sign_in(password: password, username: userID, completion: setlogincheck)
-            Thread.sleep(forTimeInterval: 1)
-            if (loginCheck == true){
-                serverCon.Recieve_Survey(completion : check_Survey)
+	@objc func loginFunction() {
+        
+        let userID = userIDField.text!
+                let password = passwordField.text!
+                serverCon.Sign_in(password: password, username: userID, completion: setlogincheck)
                 Thread.sleep(forTimeInterval: 1)
-          if(SurveyManager.Survey.getCounter() == 0){
-            if(check == true){
-              navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
-            }else{
-              navigationController?.pushViewController(HomeView(), animated: true)
+        if (loginCheck == true){
+            serverCon.Recieve_Survey(completion : check_Survey)
+            Thread.sleep(forTimeInterval: 1)
+            if(SurveyManager.Survey.getCounter() == 0){
+                if(check == true){
+                    navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
+                }else{
+                    navigationController?.pushViewController(HomeView(), animated: true)
+                }
             }
-          }
-          else{
-            navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
-          }
+            else{
+                navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
+            }
+        }
+                    
                 
-            }
-        }
-        @objc func check_Survey(input:Bool){
-            check = input;
-        }
-    }
+        
+        
+        
+       
+	}
+	@objc func check_Survey(input:Bool){
+		check = input;
+	}
+}
+
