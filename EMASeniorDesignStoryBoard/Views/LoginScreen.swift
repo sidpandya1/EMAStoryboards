@@ -15,9 +15,10 @@ let emalogo = UIImageView(image: image!)
 let PSUlogo = "penn_state_behrend_logo_3-4in (1)-1 1"
 let image2 = UIImage(named: PSUlogo)
 let psulogo = UIImageView(image: image2!)
-let serverCon = ServerConnect();
+//let serverCon = ServerConnect();
 var loginCheck = false
 class LoginScreen: UIViewController {
+    let serverCon = ServerConnect();
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.view.backgroundColor = .white
@@ -60,33 +61,49 @@ class LoginScreen: UIViewController {
 		loginCheck = input;
 		
 	}
-	@objc func loginFunction() {
-        
+//	@objc func loginFunction() {
+//
+//        let userID = userIDField.text!
+//                let password = passwordField.text!
+//                serverCon.Sign_in(password: password, username: userID, completion: setlogincheck)
+//                Thread.sleep(forTimeInterval: 1)
+//        if (loginCheck == true){
+//            serverCon.Recieve_Survey(completion : check_Survey)
+//            Thread.sleep(forTimeInterval: 1)
+//            if(SurveyManager.Survey.getCounter() == 0){
+//                if(check == true){
+//                    navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
+//                }else{
+//                    navigationController?.pushViewController(HomeView(), animated: true)
+//                }
+//            }
+//            else{
+//                navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
+//            }
+//        }
+    @objc func loginFunction() {
         let userID = userIDField.text!
-                let password = passwordField.text!
-                serverCon.Sign_in(password: password, username: userID, completion: setlogincheck)
-                Thread.sleep(forTimeInterval: 1)
-        if (loginCheck == true){
-            serverCon.Recieve_Survey(completion : check_Survey)
-            Thread.sleep(forTimeInterval: 1)
-            if(SurveyManager.Survey.getCounter() == 0){
-                if(check == true){
-                    navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
-                }else{
-                    navigationController?.pushViewController(HomeView(), animated: true)
+        let password = passwordField.text!
+
+        serverCon.Sign_in(password: password, username: userID) { [weak self] (loginCheck) in
+            if loginCheck {
+                self?.serverCon.Recieve_Survey { (hasSurvey) in
+                    DispatchQueue.main.async {
+                        if SurveyManager.Survey.getCounter() == 0 {
+                            if hasSurvey {
+                                self?.navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
+                            } else {
+                                self?.navigationController?.pushViewController(HomeView(), animated: true)
+                            }
+                        } else {
+                            self?.navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
+                        }
+                    }
                 }
             }
-            else{
-                navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
-            }
         }
-                    
-                
-        
-        
-        
-       
-	}
+    }
+
 	@objc func check_Survey(input:Bool){
 		check = input;
 	}

@@ -129,8 +129,14 @@ class SurveyManager{
         
     }
 	
-	func logout() -> UIViewController{
-		return LoginScreen()
-	}
+//	func logout() -> UIViewController{
+//		return LoginScreen()
+//	}
+    func logout() -> UIViewController {
+        if let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
+        return UIViewController()
+    }
  
 }

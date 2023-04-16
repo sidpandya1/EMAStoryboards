@@ -17,6 +17,9 @@
 		35029EED2998E9430053602B /* EMASeniorDesignStoryBoardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35029EEC2998E9430053602B /* EMASeniorDesignStoryBoardUITests.swift */; };
 		35029EEF2998E9430053602B /* EMASeniorDesignStoryBoardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35029EEE2998E9430053602B /* EMASeniorDesignStoryBoardUITestsLaunchTests.swift */; };
 		35495589299B056C00EFCD92 /* QuestionControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35495588299B056C00EFCD92 /* QuestionControllerViewController.swift */; };
+		356D47F429EB66DA003A092F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 356D47F329EB66DA003A092F /* GoogleService-Info.plist */; };
+		356D47F529EB66DA003A092F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 356D47F329EB66DA003A092F /* GoogleService-Info.plist */; };
+		356D47F629EB66DA003A092F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 356D47F329EB66DA003A092F /* GoogleService-Info.plist */; };
 		35DD48D429A429F1008E3721 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD48D329A429F1008E3721 /* HomeView.swift */; };
 		565459A3299AE2A70090B52D /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459A2299AE2A70090B52D /* LocalNotifications.swift */; };
 		565459A6299AE3140090B52D /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565459A5299AE3140090B52D /* DataStructures.swift */; };
@@ -63,6 +66,8 @@
 		35029EEC2998E9430053602B /* EMASeniorDesignStoryBoardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMASeniorDesignStoryBoardUITests.swift; sourceTree = "<group>"; };
 		35029EEE2998E9430053602B /* EMASeniorDesignStoryBoardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMASeniorDesignStoryBoardUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		35495588299B056C00EFCD92 /* QuestionControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionControllerViewController.swift; sourceTree = "<group>"; };
+		356D47F229EB4E94003A092F /* EMASeniorDesignStoryBoardDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EMASeniorDesignStoryBoardDebug.entitlements; sourceTree = "<group>"; };
+		356D47F329EB66DA003A092F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		35DD48D329A429F1008E3721 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		565459A2299AE2A70090B52D /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 		565459A5299AE3140090B52D /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
@@ -124,6 +129,7 @@
 		35029EC72998E9410053602B /* EMASeniorDesignStoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				356D47F229EB4E94003A092F /* EMASeniorDesignStoryBoardDebug.entitlements */,
 				87CBB28129BF70AC00E48909 /* Views */,
 				5654599F299AE1ED0090B52D /* functions */,
 				35029EC82998E9410053602B /* AppDelegate.swift */,
@@ -131,6 +137,7 @@
 				35495588299B056C00EFCD92 /* QuestionControllerViewController.swift */,
 				35029ED42998E9430053602B /* Assets.xcassets */,
 				35029ED62998E9430053602B /* LaunchScreen.storyboard */,
+				356D47F329EB66DA003A092F /* GoogleService-Info.plist */,
 				35029ED92998E9430053602B /* Info.plist */,
 				35029ED12998E9410053602B /* EMASeniorDesignStoryBoard.xcdatamodeld */,
 			);
@@ -196,6 +203,8 @@
 			dependencies = (
 			);
 			name = EMASeniorDesignStoryBoard;
+			packageProductDependencies = (
+			);
 			productName = EMASeniorDesignStoryBoard;
 			productReference = 35029EC52998E9410053602B /* EMASeniorDesignStoryBoard.app */;
 			productType = "com.apple.product-type.application";
@@ -268,6 +277,9 @@
 				Base,
 			);
 			mainGroup = 35029EBC2998E9410053602B;
+			packageReferences = (
+				356D47F729EB6FA6003A092F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 35029EC62998E9410053602B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -286,6 +298,7 @@
 			files = (
 				35029ED82998E9430053602B /* LaunchScreen.storyboard in Resources */,
 				35029ED52998E9430053602B /* Assets.xcassets in Resources */,
+				356D47F429EB66DA003A092F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356D47F529EB66DA003A092F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356D47F629EB66DA003A092F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EMASeniorDesignStoryBoard/EMASeniorDesignStoryBoardDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VQ32N9FEBR;
@@ -502,7 +518,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,7 +546,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -660,6 +676,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		356D47F729EB6FA6003A092F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		35029ED12998E9410053602B /* EMASeniorDesignStoryBoard.xcdatamodeld */ = {

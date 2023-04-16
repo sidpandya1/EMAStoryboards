@@ -13,6 +13,8 @@ class ServerConnect{
     let Password = ""
     let Username = ""
     
+    var token = ""
+    
     func Sign_in(password:String,username:String, completion: @escaping (Bool) -> Void) {
         userID = Int(username) ?? 0 // sets it to the vaule of the username defalts to zero if there is not a convertable int from username
         let url = URL(string: "https://psubehrendema.org/checkUser.php") //give the url of the check user
@@ -22,7 +24,7 @@ class ServerConnect{
                request.setValue("application/json", forHTTPHeaderField: "Accept")
                request.setValue("application/json", forHTTPHeaderField: "Content-Type") // set expected response type
                let encoder = JSONEncoder() // encoder for json
-               let mypost = http_post(userID: userID,deviceID: deviceID,notificationToken: token, firebaseUserToken: 0) // create the http post
+               let mypost = http_post(userID: userID,deviceID: deviceID, notificationToken: token, firebaseUserToken: 0) // create the http post
         
                let jsondata = try! encoder.encode(mypost)
                

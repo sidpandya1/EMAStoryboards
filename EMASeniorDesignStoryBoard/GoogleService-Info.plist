@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>337018243580-fsjevjihhe0u0er5glp52lki58jd1a7e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.337018243580-fsjevjihhe0u0er5glp52lki58jd1a7e</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>337018243580-7n6pnjj6kf1ljak3r3lvttt4tlt3pq2h.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD23nsUnyFLEPUKyvhl2Ta1qolXwb-OmfU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>337018243580</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>EMAapplication.EMASeniorDesignStoryBoard</string>
+	<key>PROJECT_ID</key>
+	<string>emaapplication-13bcd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>emaapplication-13bcd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:337018243580:ios:398b2721d822efedfc8a79</string>
+	<key>DATABASE_URL</key>
+	<string>https://emaapplication-13bcd.firebaseio.com</string>
+</dict>
+</plist>

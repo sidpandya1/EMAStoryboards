@@ -29,11 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
                 DispatchQueue.main.async {
                     UIApplication.shared.registerForRemoteNotifications()
                 }
-            } else {
-                // Handle denied authorization
-                func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-                    print("Failed to register for remote notifications: \(error)")
-                }
             }
             center.delegate = self
         }
@@ -44,9 +39,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
         //FirebaseApp.configure()
         requestPushNotificationPermission()
         
-        UNUserNotificationCenter.current().delegate = self // we need to firue out how to get the device token see slack videos and links
+        UNUserNotificationCenter.current().delegate = self // we need to figure out how to get the device token see slack videos and links
         
         return true
+    }
+    
+    // Handle denied authorization
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register for remote notifications: \(error)")
     }
         
     

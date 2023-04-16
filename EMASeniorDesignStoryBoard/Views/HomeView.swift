@@ -9,6 +9,7 @@ import UIKit
 var check = false
 let checkButton = UIButton(frame:CGRect(x:125,y:400,width:150, height: 50))
 let logoutButton = UIButton(frame:CGRect(x:125,y:400,width:150, height: 50))
+let serverCon = ServerConnect();
 class HomeView: UIViewController {
     let noQuestion = UILabel(frame:CGRect(x: 50, y: 100, width: 300.00, height: 300.00))
     override func viewDidLoad() {
@@ -56,7 +57,7 @@ class HomeView: UIViewController {
     }
 	
 	@objc func logout() {
-		Thread.sleep(forTimeInterval: 1)
+		//Thread.sleep(forTimeInterval: 1)
 		SurveyManager.Survey.resetCounter()
 		SurveyManager.Survey.resetSurvey()
 		navigationController?.pushViewController(LoginScreen(), animated: true)
