@@ -8,7 +8,6 @@
 import UIKit
 import CoreData
 import UserNotifications
-//import Firebase
 var token = "";
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate {
@@ -36,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
     
     // Override point for customization after application launch.
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        //FirebaseApp.configure()
+        
         requestPushNotificationPermission()
         
         UNUserNotificationCenter.current().delegate = self // we need to figure out how to get the device token see slack videos and links
