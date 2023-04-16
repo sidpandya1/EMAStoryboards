@@ -59,7 +59,7 @@ class HomeView: UIViewController {
 		Thread.sleep(forTimeInterval: 1)
 		SurveyManager.Survey.resetCounter()
 		SurveyManager.Survey.resetSurvey()
-		navigationController?.pushViewController(LoginScreen(), animated: true)
+		exit(0)
 		
 	}
 }

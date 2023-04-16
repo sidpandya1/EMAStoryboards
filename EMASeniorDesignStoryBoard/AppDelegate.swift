@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 import UserNotifications
 //import Firebase
-
+var token = "";
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate {
     
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
     // Token Handling
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Convert the device token to a string
-        let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
         print("Device token: \(token)")
         
         // TODO: Send the device token to your server

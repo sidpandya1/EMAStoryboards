@@ -63,9 +63,9 @@ class LoginScreen: UIViewController {
 	@objc func loginFunction() {
         
         let userID = userIDField.text!
-                let password = passwordField.text!
-                serverCon.Sign_in(password: password, username: userID, completion: setlogincheck)
-                Thread.sleep(forTimeInterval: 1)
+        let password = passwordField.text!
+        serverCon.Sign_in(password: password, username: userID, completion: setlogincheck)
+        Thread.sleep(forTimeInterval: 1)
         if (loginCheck == true){
             serverCon.Recieve_Survey(completion : check_Survey)
             Thread.sleep(forTimeInterval: 1)
@@ -81,11 +81,6 @@ class LoginScreen: UIViewController {
             }
         }
                     
-                
-        
-        
-        
-       
 	}
 	@objc func check_Survey(input:Bool){
 		check = input;
