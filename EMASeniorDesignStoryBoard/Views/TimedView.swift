@@ -6,12 +6,13 @@
 //
 
 import UIKit
-let question = UILabel(frame:CGRect(x: 37, y: 100, width: 300.00, height: 300.00))
-let previousButton = UIButton(frame:CGRect(x:25,y:600,width:150, height: 50))
-let nextButton = UIButton(frame:CGRect(x:200,y:600,width:150, height: 50))
-let timePicker = UIDatePicker()
 
 class TimedView: UIViewController{
+    private let question = UILabel(frame:CGRect(x: 37, y: 100, width: 300.00, height: 300.00))
+    private let timePicker = UIDatePicker()
+
+    private let previousButton = UIButton(frame:CGRect(x:25,y:600,width:150, height: 50))
+    private let nextButton = UIButton(frame:CGRect(x:200,y:600,width:150, height: 50))
 	override func viewDidLoad() {
         updateAppearance()
 		super.viewDidLoad()
@@ -92,6 +93,29 @@ class TimedView: UIViewController{
 		nextButton.center.x = self.view.center.x + 100
 		nextButton.addTarget(self, action: #selector(goToNextQuestion), for: .touchUpInside)
 	}
+    
+    @objc func goToNextQuestion() {
+        
+        
+        if(Int(SurveyManager.Survey.getCounter()) >= SurveyManager.Survey.returnMaxQuestion()-1){
+            serverCon.Send_Survey(completion: send_survey, payload: JSONEncoding.encoderJSON.getArrayOfAnswers())
+            SurveyManager.Survey.resetSurvey()
+            SurveyManager.Survey.resetCounter()
+            navigationController?.pushViewController(HomeView(), animated: true)
+
+        }
+        
+        else{
+            navigationController?.pushViewController(SurveyManager.Survey.nextQuestion(), animated: true)
+        }
+        
+        
+        
+    }
+    
+    @objc func send_survey(input:Bool){
+        check = input;
+    }
 	
 	func previousQuestionButton() {
 		view.addSubview(previousButton)
@@ -103,11 +127,6 @@ class TimedView: UIViewController{
 
 	}
 	
-	
-	@objc func goToNextQuestion() {
-		JSONEncoding.encoderJSON.addAnswerToArray(questionID: SurveyManager.Survey.getQuestionID(), response: String())
-		navigationController?.pushViewController(SurveyManager.Survey.nextQuestion(), animated: true)
-	}
 	
 	@objc func goToPreviousQuestion() {
 		navigationController?.pushViewController(SurveyManager.Survey.previousQuestion(), animated: true)

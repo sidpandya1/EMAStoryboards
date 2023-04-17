@@ -99,6 +99,9 @@ class HomeView: UIViewController {
 			navigationController?.pushViewController(SurveyManager.Survey.firstQuestion(), animated: true)
 		}
     }
+    @objc func send_survey(input:Bool){
+        check = input;
+    }
 	
 	@objc func logout() {
 		//Thread.sleep(forTimeInterval: 1)

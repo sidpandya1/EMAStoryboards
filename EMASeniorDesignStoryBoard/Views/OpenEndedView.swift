@@ -6,8 +6,12 @@
 //
 
 import UIKit
-private let answerField = UITextField(frame: CGRect(x: 0, y: 250, width: 300.00, height:100.00));
+
 class OpenEndedView: UIViewController{
+    private let answerField = UITextField(frame: CGRect(x: 0, y: 250, width: 300.00, height:100.00));
+    private let previousButton = UIButton(frame:CGRect(x:25,y:600,width:150, height: 50))
+    private let nextButton = UIButton(frame:CGRect(x:200,y:600,width:150, height: 50))
+    private let question = UILabel(frame:CGRect(x: 37, y: 100, width: 300.00, height: 300.00))
 	override func viewDidLoad() {
         updateAppearance()
 		super.viewDidLoad()
@@ -68,7 +72,30 @@ class OpenEndedView: UIViewController{
 		view.addSubview(answerField)
 
 	}
+    
+    
+    @objc func goToNextQuestion() {
+        JSONEncoding.encoderJSON.addAnswerToArray(questionID:SurveyManager.Survey.getQuestionID(), response: answerField.text!)
+        answerField.text! = "";
+        if(Int(SurveyManager.Survey.getCounter()) >= SurveyManager.Survey.returnMaxQuestion()-1){
+            serverCon.Send_Survey(completion: send_survey, payload: JSONEncoding.encoderJSON.getArrayOfAnswers())
+            SurveyManager.Survey.resetSurvey()
+            SurveyManager.Survey.resetCounter()
+            navigationController?.pushViewController(HomeView(), animated: true)
+
+        }
+        
+        else{
+            navigationController?.pushViewController(SurveyManager.Survey.nextQuestion(), animated: true)
+        }
+        
+        
+        
+    }
 	
+    @objc func send_survey(input:Bool){
+        check = input;
+    }
 	func showQuestion() {
 		question.text = SurveyManager.Survey.getCurrentQuestion()
 		print(SurveyManager.Survey.getQuestionID())
@@ -98,12 +125,7 @@ class OpenEndedView: UIViewController{
 		previousButton.addTarget(self, action: #selector(goToPreviousQuestion), for: .touchUpInside)
 
 	}
-	@objc private func goToNextQuestion() {
-        JSONEncoding.encoderJSON.addAnswerToArray(questionID: SurveyManager.Survey.getQuestionID() , response: answerField.text!)
-		answerField.text?.removeAll()
-		navigationController?.pushViewController(SurveyManager.Survey.nextQuestion(), animated: true)
-	}
-	
+    
 	@objc private func goToPreviousQuestion() {
 		navigationController?.pushViewController(SurveyManager.Survey.previousQuestion(), animated: true)
 	}

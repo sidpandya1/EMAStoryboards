@@ -22,8 +22,14 @@ class JSONEncoding{
     }
     
     func deleteLastAnswerFromArray(){
-        arrayOfAnswers.removeLast()
-        print("removed last answer")
+        if(arrayOfAnswers.count == 0){
+            
+        }
+        else{
+            arrayOfAnswers.removeLast()
+            print("removed last answer")
+        }
+       
     }
     
     func arraySize() -> Int{

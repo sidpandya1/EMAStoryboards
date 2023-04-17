@@ -31,6 +31,8 @@ class SurveyManager{
     }
     func setSurvey(input:[Question]){
         question = input
+        max = question.count
+        print(max);
         
     }
     func getQuestionID() -> Int{
@@ -87,9 +89,15 @@ class SurveyManager{
             switch question[counter].type{
             case "Scaled":
                 return (ScaledView())
+            case "Open-Ended":
+                return (OpenEndedView())
+            case "Time":
+                return (TimedView())
+                
             default:
                 return (HomeView())
             }
+        
         }
     
     func firstQuestion() -> UIViewController{
