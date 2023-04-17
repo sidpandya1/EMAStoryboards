@@ -17,8 +17,9 @@ let image2 = UIImage(named: PSUlogo)
 let psulogo = UIImageView(image: image2!)
 let serverCon = ServerConnect();
 var loginCheck = false
+
 class LoginScreen: UIViewController {
-    let serverCon = ServerConnect();
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
         updateAppearance()

@@ -6,17 +6,19 @@
 //
 import Foundation
 class ServerConnect{
-    let Port_number = 0
-    var userID = 0;
-    var deviceID = 100;
     
-    let Password = ""
-    let Username = ""
+    private var userID = 0;
+    private var deviceID = 100;
     
-    var token = ""
+   private let Password = ""
+    private let Username = ""
+    
+
     
     func Sign_in(password:String,username:String, completion: @escaping (Bool) -> Void) {
         userID = Int(username) ?? 0 // sets it to the vaule of the username defalts to zero if there is not a convertable int from username
+        
+        print(" userid ", userID);
         let url = URL(string: "https://psubehrendema.org/checkUser.php") //give the url of the check user
                guard let requestUrl = url else { fatalError() }
                var request = URLRequest(url: requestUrl) // where the rquest is happening
@@ -60,11 +62,12 @@ class ServerConnect{
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                let encoder = JSONEncoder()
         // make this part the http_post_send_survey with the coorespoidng response_Survey from above
+        print("user id", userID)
         let mypost = http_post_send_survey(userID: userID,deviceID: deviceID,survey: payload)
         //if this works that is the last thing
 
                let jsondata = try! encoder.encode(mypost)
-            print("Survey response to be sent",jsondata)
+            print("Survey response to be sent", mypost)
                request.httpBody = jsondata
         let _: Void = URLSession.shared.dataTask(with: request) { data, response, error in
                    if let data = data {
@@ -91,6 +94,7 @@ class ServerConnect{
                request.setValue("application/json", forHTTPHeaderField: "Accept")
                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                let encoder = JSONEncoder()
+        
         let mypost = http_post(userID: userID,deviceID: deviceID,notificationToken: token,firebaseUserToken: 0)
                
 
