@@ -108,11 +108,10 @@ class ScaledView: UIViewController {
     }
     
     @objc func sliderValueDidChange(_ sender:UISlider!){
-		print("Slider value changed")
 		let roundedStepValue = round(sender.value / step) * step
 		sender.value = roundedStepValue
 		sliderValue = Double(sender.value)
-		print(sliderValue)
+		print("Slider value = ", sliderValue)
     }
     
     @objc func send_survey(input:Bool){
