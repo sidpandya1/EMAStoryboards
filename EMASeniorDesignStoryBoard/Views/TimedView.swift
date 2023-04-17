@@ -95,7 +95,20 @@ class TimedView: UIViewController{
 	}
     
     @objc func goToNextQuestion() {
-        JSONEncoding.encoderJSON.addAnswerToArray(questionID:SurveyManager.Survey.getQuestionID(), response: String())
+        
+        
+        
+        let dateFormatter = DateFormatter()
+        let selectedDate = timePicker.date
+
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: selectedDate)
+        let minute = calendar.component(.minute, from: selectedDate)
+       
+        let output = "\(hour):\(minute)"
+        print(output)
+        JSONEncoding.encoderJSON.addAnswerToArray(questionID:SurveyManager.Survey.getQuestionID(), response: String(output))
+        
         
         if(Int(SurveyManager.Survey.getCounter()) >= SurveyManager.Survey.returnMaxQuestion()-1){
             serverCon.Send_Survey(completion: send_survey, payload: JSONEncoding.encoderJSON.getArrayOfAnswers())
