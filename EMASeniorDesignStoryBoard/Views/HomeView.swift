@@ -17,6 +17,9 @@ class HomeView: UIViewController {
         super.viewDidLoad()
         noQuestion.text = "No Surveys please check back later"
         noQuestion.textColor = UIColor.systemBlue
+		noQuestion.center.x = self.view.center.x
+		noQuestion.center.y = self.view.center.y - 150
+		noQuestion.textAlignment = .center
         self.view.addSubview(noQuestion)
         navigationItem.hidesBackButton = true
         setupButton()

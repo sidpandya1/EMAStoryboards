@@ -14,7 +14,8 @@ class ScaledView: UIViewController {
 	private let previousButton = UIButton(frame:CGRect(x:25,y:600,width:150, height: 50))
 	private let nextButton = UIButton(frame:CGRect(x:200,y:600,width:150, height: 50))
 	private let slider = UISlider(frame:CGRect(x:50,y:445,width:300,height:20))
-	private var sliderValue = 0.0
+	private var sliderValue: Double = 0.0
+	private let step: Float = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +51,6 @@ class ScaledView: UIViewController {
         self.view.addSubview(sliderUbDesc)
     }
     
-    
-    ///
     
     func showQuestion() {
         question.text = SurveyManager.Survey.getCurrentQuestion()
@@ -108,11 +107,12 @@ class ScaledView: UIViewController {
         navigationController?.pushViewController(SurveyManager.Survey.previousQuestion(), animated: true)
     }
     
-    @objc func sliderValueDidChange(_ sender:UISlider!)
-    {
-        print("Slider value changed")
-        
-        sliderValue = Double(sender.value)
+    @objc func sliderValueDidChange(_ sender:UISlider!){
+		print("Slider value changed")
+		let roundedStepValue = round(sender.value / step) * step
+		sender.value = roundedStepValue
+		sliderValue = Double(sender.value)
+		print(sliderValue)
     }
     
     @objc func send_survey(input:Bool){
