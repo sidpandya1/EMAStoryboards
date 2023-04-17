@@ -13,6 +13,7 @@ let timePicker = UIDatePicker()
 
 class TimedView: UIViewController{
 	override func viewDidLoad() {
+        updateAppearance()
 		super.viewDidLoad()
 		self.view.backgroundColor = .white
 		showQuestion()
@@ -25,6 +26,42 @@ class TimedView: UIViewController{
 		
 		navigationItem.hidesBackButton = true
 	}
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            updateAppearance()
+        }
+    }
+    
+    func updateAppearance() {
+            updateBackgroundColor()
+            updateTextFieldAppearance()
+        }
+
+    func updateBackgroundColor() {
+        switch traitCollection.userInterfaceStyle {
+        case .dark:
+            view.backgroundColor = .systemBackground // Use a dark background color for dark mode
+        case .light, .unspecified:
+            view.backgroundColor = .systemBackground // Use a light background color for light mode or when the mode is unspecified
+        @unknown default:
+            break
+        }
+    }
+    
+    func updateTextFieldAppearance() {
+            switch traitCollection.userInterfaceStyle {
+            case .dark:
+                question.textColor = .white
+                question.backgroundColor = .systemBlue
+            case .light, .unspecified:
+                question.textColor = .white
+                question.backgroundColor = .systemBlue
+            @unknown default:
+                break
+            }
+        }
 	
 	func showTimePicker(){
 		timePicker.datePickerMode = .time
@@ -40,7 +77,6 @@ class TimedView: UIViewController{
 		question.text = SurveyManager.Survey.getCurrentQuestion()
 		print(SurveyManager.Survey.getQuestionID())
 		question.backgroundColor = .systemBlue
-		question.textColor = UIColor.white
 		question.textAlignment = .center
 		question.numberOfLines = 0
 		question.center.x = self.view.center.x

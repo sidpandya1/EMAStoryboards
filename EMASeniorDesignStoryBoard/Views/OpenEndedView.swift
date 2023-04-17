@@ -9,8 +9,8 @@ import UIKit
 private let answerField = UITextField(frame: CGRect(x: 0, y: 250, width: 300.00, height:100.00));
 class OpenEndedView: UIViewController{
 	override func viewDidLoad() {
+        updateAppearance()
 		super.viewDidLoad()
-		self.view.backgroundColor = .white
 		showQuestion()
 		showAnswerBox()
 		previousQuestionButton()
@@ -18,11 +18,51 @@ class OpenEndedView: UIViewController{
 		navigationItem.hidesBackButton = true
 		
 	}
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            updateAppearance()
+        }
+    }
+    
+    func updateAppearance() {
+            updateBackgroundColor()
+            updateTextFieldAppearance()
+        }
+
+    func updateBackgroundColor() {
+        switch traitCollection.userInterfaceStyle {
+        case .dark:
+            view.backgroundColor = .systemBackground // Use a dark background color for dark mode
+        case .light, .unspecified:
+            view.backgroundColor = .systemBackground // Use a light background color for light mode or when the mode is unspecified
+        @unknown default:
+            break
+        }
+    }
+    
+    func updateTextFieldAppearance() {
+            switch traitCollection.userInterfaceStyle {
+            case .dark:
+                answerField.textColor = .white
+                answerField.backgroundColor = .systemGray5
+                question.textColor = .white
+                question.backgroundColor = .systemBlue
+            case .light, .unspecified:
+                answerField.textColor = .black
+                answerField.backgroundColor = .white
+                question.textColor = .white
+                question.backgroundColor = .systemBlue
+            @unknown default:
+                break
+            }
+        }
 	
 	func showAnswerBox(){
 		answerField.placeholder = "Enter your response here"
 		answerField.borderStyle = UITextField.BorderStyle.line
-		answerField.backgroundColor = UIColor.white
 		answerField.center.x = self.view.center.x
 		answerField.center.y = self.view.center.y + 50
 		view.addSubview(answerField)
@@ -33,7 +73,6 @@ class OpenEndedView: UIViewController{
 		question.text = SurveyManager.Survey.getCurrentQuestion()
 		print(SurveyManager.Survey.getQuestionID())
 		question.backgroundColor = .systemBlue
-		question.textColor = UIColor.white
 		question.textAlignment = .center
 		question.numberOfLines = 0
 		question.center.x = self.view.center.x

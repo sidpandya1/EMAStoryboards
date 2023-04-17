@@ -13,7 +13,7 @@ let logoutButton = UIButton(frame:CGRect(x:125,y:400,width:150, height: 50))
 class HomeView: UIViewController {
     let noQuestion = UILabel(frame:CGRect(x: 50, y: 100, width: 300.00, height: 300.00))
     override func viewDidLoad() {
-		self.view.backgroundColor = .white
+        updateAppearance()
         super.viewDidLoad()
         noQuestion.text = "No Surveys please check back later"
         noQuestion.textColor = UIColor.systemBlue
@@ -26,6 +26,47 @@ class HomeView: UIViewController {
 		setupLogoutButton()
 		
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            updateAppearance()
+        }
+    }
+    
+    func updateAppearance() {
+            updateBackgroundColor()
+            updateTextFieldAppearance()
+        }
+
+    func updateBackgroundColor() {
+        switch traitCollection.userInterfaceStyle {
+        case .dark:
+            view.backgroundColor = .systemBackground // Use a dark background color for dark mode
+        case .light, .unspecified:
+            view.backgroundColor = .systemBackground // Use a light background color for light mode or when the mode is unspecified
+        @unknown default:
+            break
+        }
+    }
+    
+    func updateTextFieldAppearance() {
+            switch traitCollection.userInterfaceStyle {
+            case .dark:
+                userIDField.textColor = .white
+                userIDField.backgroundColor = .systemGray5
+                passwordField.textColor = .white
+                passwordField.backgroundColor = .systemGray5
+            case .light, .unspecified:
+                userIDField.textColor = .black
+                userIDField.backgroundColor = .white
+                passwordField.textColor = .black
+                passwordField.backgroundColor = .white
+            @unknown default:
+                break
+            }
+        }
 	func setupLogoutButton(){
 		view.addSubview(logoutButton)
 		logoutButton.configuration = .filled()
