@@ -57,7 +57,7 @@ class TimedView: UIViewController{
                 question.textColor = .white
                 question.backgroundColor = .systemBlue
             case .light, .unspecified:
-                question.textColor = .white
+                question.textColor = .black
                 question.backgroundColor = .systemBlue
             @unknown default:
                 break

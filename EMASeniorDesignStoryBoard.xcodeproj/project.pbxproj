@@ -278,7 +278,6 @@
 			);
 			mainGroup = 35029EBC2998E9410053602B;
 			packageReferences = (
-				356D47F729EB6FA6003A092F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 35029EC62998E9410053602B /* Products */;
 			projectDirPath = "";
@@ -511,7 +510,7 @@
 				CODE_SIGN_ENTITLEMENTS = EMASeniorDesignStoryBoard/EMASeniorDesignStoryBoardDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SU73W5HML4;
+				DEVELOPMENT_TEAM = VQ32N9FEBR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EMASeniorDesignStoryBoard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -676,17 +675,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		356D47F729EB6FA6003A092F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		35029ED12998E9410053602B /* EMASeniorDesignStoryBoard.xcdatamodeld */ = {
