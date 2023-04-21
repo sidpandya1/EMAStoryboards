@@ -21,6 +21,9 @@ var loginCheck = false
 class LoginScreen: UIViewController {
     
 	override func viewDidLoad() {
+		loginCheck = false
+		userIDField.text = ""
+		passwordField.text = ""
 		super.viewDidLoad()
         updateAppearance()
 		emalogo.frame = CGRect(x: 80, y: 45, width: 250, height:200)
@@ -142,6 +145,10 @@ class LoginScreen: UIViewController {
 	//endEditing causes the view (or one of its embedded text fields) to resign the first responder status.
 	//In short- Dismiss the active keyboard.
 	view.endEditing(true)
+	}
+	
+	func setLoginToFalse(){
+		loginCheck = false
 	}
 }
 
