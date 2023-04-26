@@ -16,7 +16,7 @@ class TimedView: UIViewController{
 	override func viewDidLoad() {
         updateAppearance()
 		super.viewDidLoad()
-		self.view.backgroundColor = .white
+
 		showQuestion()
 		
 		showTimePicker()
@@ -57,7 +57,7 @@ class TimedView: UIViewController{
                 question.textColor = .white
                 question.backgroundColor = .systemBlue
             case .light, .unspecified:
-                question.textColor = .black
+                question.textColor = .white
                 question.backgroundColor = .systemBlue
             @unknown default:
                 break
